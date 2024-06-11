@@ -1,0 +1,37 @@
+// default font family
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap');
+
+
+//default root
+:root {
+	/* Font Family */
+	--body-font: "Outfit", sans-serif;
+	--sub-font:  "Montserrat", sans-serif;
+	/* Transition */
+	--transition: all 0.5s ease-in-out;
+
+	/* Color styles */
+	--n0: #fff;
+	--n00: #000;
+	--p1: #75F;
+	--p100: #2143D4;
+	--p200: #1DCFAF;
+	--p300: #B021D4;
+	--p400: #D48C21;
+	--p500: #8FCD41;
+	--p600: #D44C21;
+	--p700: #A18262;
+	--p800: #20A378;
+	--p900: #F9F871;
+	--n900: #101010;
+	--bg1: #FEF9F1;
+	--bg2: #F1FEFD;
+	--bg3: #FEF6FE;
+	--bg4: #F1F7FE;
+	--bg5: #FEF8F6;
+	--bg6: #F6F9F8;
+	--section-bg: #F6F6F6;
+	--danger: #F00;
+	--pp-clr: #575A5E;
+}
+
