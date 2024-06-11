@@ -21,24 +21,23 @@ $(document).ready(() => {
     }, 1500);
     //--== Preloader ==--//
   
-    //--== GSAP Smooth Scrolling ==--//
-    // gsap.registerPlugin(ScrollSmoother); 
-    // ScrollSmoother.create({
-    //   smooth: 2,
-    //   effects: true,
-    // });
-
-
-
     // lenis Scroll Init
-    gsap.registerPlugin(ScrollSmoother); 
-      const lenis = new Lenis();
-      gsap.ticker.add(function (time) {
-        // lenis.raf(time * 40000);
-        lenis.raf(time * 400);
-      });
-      gsap.ticker.lagSmoothing(0);
-      ScrollTrigger.update();
+    // gsap.registerPlugin(ScrollSmoother); 
+    //   const lenis = new Lenis();
+    //   gsap.ticker.add(function (time) {
+    //     // lenis.raf(time * 40000);
+    //     lenis.raf(time * 400);
+    //   });
+    //   gsap.ticker.lagSmoothing(0);
+    //   ScrollTrigger.update();
+
+    const text = document.querySelector(".texta");
+        text.innerHTML = text.innerText
+            .split("")
+            .map(
+            (char, i) => `<span style="transform:rotate(${i * 9}deg)">${char}</span>`
+            )
+        .join("");
 
 
     // Click to Scroll Top

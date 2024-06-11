@@ -1,6 +1,143 @@
 //Hero Style Scss
 .hero-section{
     background-size: cover;
-    padding-top: 240px;
+    padding: 270px 0 196px;
+    .hero-content{
+        h1{
+            font-size: 88px;
+            line-height: 90px;
+            line-height: 120%;
+            margin-bottom: 16px;
+            font-family: var(--body-font);
+            font-weight: 800;
+        }
+        p{
+            font-size: 16px;
+            color: var(--n900);
+            margin-bottom: 36px;
+            line-height: 150%;
+            max-width: 570px;
+        }
+        .hero-review{
+            .ratting{
+                i{
+                    color: var(--ratting);
+                    font-size: 16px;
+                }
+            }
+
+        }
+        .hero-btn-area{
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+    }
+    .hero-thumb{
+        .textcircle{
+            background: var(--n0);
+            position: absolute;
+            right: -70px;
+            top: -70px;
+        }
+        @include maxQuery(1399){
+            .textcircle{
+                right: 50%;
+                top: -90px;
+                transform: translateX(50%);
+            }
+        }
+    }
+    @include maxQuery(1399){
+        padding: 270px 0 126px;
+    }
+    @include maxQuery(1199){
+        padding: 230px 0 120px;
+        .hero-content{
+            h1{
+                font-size: 68px;
+                line-height: 90px;
+            }
+        }    
+    }
+    @include maxQuery(991){
+        padding: 160px 0 100px;
+        .hero-content{
+            margin-bottom: 30px;
+            .hero-btn-area{
+                gap: 30px;
+            }
+        }
+        .hero-thumb{
+            margin-right: auto;
+        }
+    }
+    @include maxQuery(767){
+        .hero-thumb{
+            .textcircle{
+                right: 50%;
+                top: 50%;
+                transform: translate(50%, -50%);
+            }
+        }
+    }
+    @include maxQuery(500){
+        .hero-thumb{
+            .textcircle{
+                width: 150px;
+                height: 150px;
+                .texta{
+                    width: 140px;
+                    height: 140px;
+                    top: 6px;
+                    left: 6px;
+                    span{
+                        font-size: 10px;
+                        transform-origin: 0 68px;
+                    }
+                }
+                .circle-arrow{
+                    i{
+                        font-size: 20px;
+                    }
+                }
+                right: 50%;
+                top: 50%;
+                transform: translate(50%, -50%);
+            }
+        }
+    }
+    @include maxQuery(450){
+        .hero-content{
+            margin-bottom: 24px;
+            .hero-btn-area{
+                gap: 16px 20px;
+                flex-wrap: wrap;
+            }
+        }
+    }
+}
+
+.textcircle{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    background: var(--n0);
+    .texta {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+    }
+    .circle-arrow{
+        z-index: 9;
+        i{
+            font-size: 38px;
+            color: var(--n900);
+        }
+    }
 }
 //Hero Style Scss
+           
