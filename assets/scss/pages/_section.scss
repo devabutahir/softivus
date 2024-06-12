@@ -1,0 +1,61 @@
+// Text Slide v01
+.textslide-section{
+    background: linear-gradient(90deg, #75F 10%, #40A4DB 44%, #0CD2B3 100%);
+    z-index: 1;
+    .comm{
+        display: flex;
+        gap: 32px;
+        .cmn-textslide{
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--n0);
+            line-height: 120%;
+            font-family: var(--body-font);
+        }
+        .icon{
+            width: 45px;
+            img{
+                width: 100%;
+            }
+        }
+    }
+    .text-textture{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.3;
+    }
+    @include maxQuery(991){
+        .comm{
+            gap: 12px;
+            .cmn-textslide{
+                font-size: 26px;
+                font-weight: 700;
+            }
+            .icon{
+                width: 45px;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    @include maxQuery(575){
+        .comm{
+            gap: 12px;
+            .cmn-textslide{
+                font-size: 20px;
+            }
+            .icon{
+                width: 30px;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+// Text Slide v01

@@ -73,6 +73,7 @@
         }
     }
     @include maxQuery(767){
+        padding: 150px 0 90px;
         .hero-thumb{
             .textcircle{
                 right: 50%;
@@ -80,6 +81,12 @@
                 transform: translate(50%, -50%);
             }
         }
+        .hero-content{
+            h1{
+                font-size: 48px;
+                line-height: 70px;
+            }
+        } 
     }
     @include maxQuery(500){
         .hero-thumb{
@@ -106,6 +113,16 @@
                 transform: translate(50%, -50%);
             }
         }
+        .hero-content{
+            h1{
+                font-size: 38px;
+                line-height: 50px;
+                margin-bottom: 10px;
+            }
+            p{
+                margin-bottom: 26px;
+            }
+        } 
     }
     @include maxQuery(450){
         .hero-content{

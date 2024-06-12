@@ -23,21 +23,21 @@ $(document).ready(() => {
   
     // lenis Scroll Init
     // gsap.registerPlugin(ScrollSmoother); 
-    //   const lenis = new Lenis();
-    //   gsap.ticker.add(function (time) {
-    //     // lenis.raf(time * 40000);
-    //     lenis.raf(time * 400);
-    //   });
-    //   gsap.ticker.lagSmoothing(0);
-    //   ScrollTrigger.update();
+    // const lenis = new Lenis();
+    // gsap.ticker.add(function (time) {
+    //   lenis.raf(time * 400);
+    // });
+    // gsap.ticker.lagSmoothing(0);
+    // ScrollTrigger.update();
 
+    // Text Circle 
     const text = document.querySelector(".texta");
-        text.innerHTML = text.innerText
-            .split("")
-            .map(
-            (char, i) => `<span style="transform:rotate(${i * 9}deg)">${char}</span>`
-            )
-        .join("");
+    text.innerHTML = text.innerText
+        .split("")
+        .map(
+        (char, i) => `<span style="transform:rotate(${i * 9}deg)">${char}</span>`
+        )
+    .join("");
 
 
     // Click to Scroll Top
