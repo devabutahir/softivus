@@ -42,6 +42,8 @@
   --bg4: #F1F7FE;
   --bg5: #FEF8F6;
   --bg6: #F6F9F8;
+  --bg7: #F9FEF1;
+  --bg8: #F9F7F5;
   --ratting: #FF9900;
   --section-bg: #F6F6F6;
   --danger: #F00;
@@ -468,6 +470,12 @@ li {
     padding-bottom: 50px;
   }
 }
+.section-title .choose-badge {
+  border: 1px solid var(--n00);
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 600;
+}
 @media (max-width: 575px) {
   .section-title h2 {
     font-size: 28px;
@@ -765,6 +773,10 @@ p {
 
 .ls {
   letter-spacing: 4px;
+}
+
+.section-bg {
+  background: var(--section-bg);
 }
 
 .dots-cmn {
@@ -1908,6 +1920,7 @@ iframe {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 120px 10px 120px;
   position: relative;
+  z-index: 1;
 }
 .together-initial .softivus-text {
   font-size: 380px;
@@ -1922,6 +1935,7 @@ iframe {
   top: -95px;
   left: 0;
   width: 100%;
+  z-index: -1;
 }
 .together-initial .together-content h1 .title-inner {
   display: flex;
@@ -2090,6 +2104,170 @@ iframe {
   }
   .textslide-section .comm .icon img {
     width: 100%;
+  }
+}
+
+.choose-items .icon {
+  width: 80px;
+  min-width: 80px;
+  height: 80px;
+  margin: 0 auto 28px;
+  transition: all 0.4s;
+}
+.choose-items .icon img {
+  transition: all 0.5s;
+}
+.choose-items .content h5 a {
+  font-size: 20px !important;
+}
+.choose-items.choose-v01 {
+  background: var(--bg4);
+}
+.choose-items.choose-v01 .icon {
+  background: var(--p100);
+}
+.choose-items.choose-v02 {
+  background: var(--bg2);
+}
+.choose-items.choose-v02 .icon {
+  background: var(--p200);
+}
+.choose-items.choose-v03 {
+  background: var(--bg3);
+}
+.choose-items.choose-v03 .icon {
+  background: var(--p300);
+}
+.choose-items.choose-v04 {
+  background: var(--bg1);
+}
+.choose-items.choose-v04 .icon {
+  background: var(--p400);
+}
+.choose-items.choose-v05 {
+  background: var(--bg7);
+}
+.choose-items.choose-v05 .icon {
+  background: var(--p500);
+}
+.choose-items.choose-v06 {
+  background: var(--bg5);
+}
+.choose-items.choose-v06 .icon {
+  background: var(--p600);
+}
+.choose-items.choose-v07 {
+  background: var(--bg8);
+}
+.choose-items.choose-v07 .icon {
+  background: var(--p700);
+}
+.choose-items.choose-v08 {
+  background: var(--bg6);
+}
+.choose-items.choose-v08 .icon {
+  background: var(--p800);
+}
+.choose-items:hover h5 a {
+  color: var(--p100);
+}
+.choose-items:hover .icon {
+  background: var(--n0);
+}
+.choose-items:hover .icon svg path {
+  fill: var(--n900);
+}
+.choose-items:hover .icon img {
+  filter: brightness(0);
+}
+
+.faq-leftbox {
+  background: var(--n0);
+  border-radius: 32px;
+}
+.faq-leftbox .thumb {
+  margin: 0 auto;
+  text-align: center;
+}
+.faq-leftbox .thumb .faq-element {
+  position: absolute;
+  right: 40px;
+  top: -25px;
+  animation: updown 2s linear infinite;
+}
+
+.faq {
+  background: var(--n0);
+  border-radius: 32px;
+}
+.faq .header-area {
+  cursor: pointer;
+}
+.faq .header-area button {
+  font-size: 24px;
+  font-weight: 600;
+  font-family: var(--body-font);
+  transition: all 0.4s;
+  color: var(--n50);
+}
+@media (max-width: 1199px) {
+  .faq .header-area button {
+    padding-right: 16%;
+  }
+}
+.faq .header-area button::before, .faq .header-area button::after {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  border-radius: 5px;
+  font-size: 24px;
+}
+.faq .header-area button::before {
+  content: "";
+  transition: var(--transition);
+}
+.faq .header-area button::after {
+  font-family: "Font Awesome 5 Free";
+  content: "+";
+  transition: var(--transition);
+  font-weight: 600;
+  color: var(--n900);
+}
+.faq .content-area {
+  display: none;
+}
+.faq .content-area .content-body {
+  padding-top: 16px;
+}
+.faq .content-area .content-body p {
+  font-size: 16px;
+  font-weight: 400;
+}
+.faq .active button::after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f068";
+  color: var(--p1);
+}
+.faq .active button::before {
+  background-color: var(--n0);
+  color: var(--p1) !important;
+}
+.faq .accordion-single {
+  transition: all 0.5s;
+  border-radius: 16px;
+  background: var(--n0);
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.06), 0px 1px 3px 0px rgba(16, 24, 40, 0.1);
+  padding: 20px 20px;
+}
+.faq .accordion-single.active {
+  background: #ECECFF;
+}
+.faq .accordion-single.active button {
+  color: var(--900);
+}
+@media (max-width: 1199px) {
+  .faq .header-area button {
+    font-size: 18px;
   }
 }
 

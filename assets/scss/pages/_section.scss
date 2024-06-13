@@ -59,3 +59,184 @@
     }
 }
 // Text Slide v01
+
+// Choose Section
+.choose-items{
+    .icon{
+        @include box(80);
+        margin: 0 auto 28px;
+        transition: all 0.4s;
+        img{
+            transition: all 0.5s;
+        }
+    }
+    .content{
+        h5{
+            a{
+                font-size: 20px !important;
+            }
+        }
+    }
+    &.choose-v01{
+        background: var(--bg4);
+        .icon{
+            background: var(--p100);
+        }
+    }
+    &.choose-v02{
+        background: var(--bg2);
+        .icon{
+            background: var(--p200);
+        }
+    }
+    &.choose-v03{
+        background: var(--bg3);
+        .icon{
+            background: var(--p300);
+        }
+    }
+    &.choose-v04{
+        background: var(--bg1);
+        .icon{
+            background: var(--p400);
+        }
+    }
+    &.choose-v05{
+        background: var(--bg7);
+        .icon{
+            background: var(--p500);
+        }
+    }
+    &.choose-v06{
+        background: var(--bg5);
+        .icon{
+            background: var(--p600);
+        }
+    }
+    &.choose-v07{
+        background: var(--bg8);
+        .icon{
+            background: var(--p700);
+        }
+    }
+    &.choose-v08{
+        background: var(--bg6);
+        .icon{
+            background: var(--p800);
+        }
+    }
+    &:hover{
+        h5{
+            a{
+                color: var(--p100);
+            }
+        }
+        .icon{
+            background: var(--n0);
+            svg{
+                path{
+                    fill: var(--n900);
+                }
+            }
+            img{
+                filter: brightness(0);
+            }
+        }
+    }
+}
+// Choose Section
+
+// Faq Section
+.faq-leftbox{
+    background: var(--n0);
+    border-radius: 32px;
+    .thumb{
+        margin: 0 auto;
+        text-align: center;
+        .faq-element{
+            position: absolute;
+            right: 40px;
+            top: -25px;
+            animation: updown 2s linear infinite;
+        }
+    }
+}
+//Faq Section
+.faq {
+    background: var(--n0);
+    border-radius: 32px;
+    .header-area {
+        cursor: pointer;
+        button {
+            font-size: 24px;
+            font-weight: 600;
+            font-family: var(--body-font);
+            transition: all 0.4s;
+            color: var(--n50);
+            @include maxQuery(1199) {
+                padding-right: 16%;
+            }
+            &::before, &::after {
+                position: absolute;
+                z-index: 1;
+                right: 0;
+                border-radius: 5px;
+                font-size: 24px;
+            }
+            &::before {
+                content: "";
+                transition: var(--transition);
+            }
+            &::after {
+                font-family: "Font Awesome 5 Free";
+                content: "\2b";
+                transition: var(--transition);
+                font-weight: 600;
+                color: var(--n900);
+            }
+        }
+    }
+    .content-area {
+        display: none;
+        .content-body{
+            padding-top: 16px;
+          p{
+            font-size: 16px;
+            font-weight: 400;
+          }
+        }
+    }
+    .active button {
+        &::after {
+            font-family: "Font Awesome 5 Free";
+            content: "\f068";
+            color: var(--p1);
+        }
+  
+        &::before {
+            background-color: var(--n0);
+            color: var(--p1) !important;
+        }
+    }
+    .accordion-single{
+      transition: all 0.5s;
+      border-radius: 16px;
+        background: var(--n0);
+        box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.06), 0px 1px 3px 0px rgba(16, 24, 40, 0.10);
+        padding: 20px 20px;
+        &.active{
+            background: #ECECFF;
+            button{
+                color: var(--900);
+            }
+        }
+    }
+    @include maxQuery(1199){
+        .header-area {
+            button {
+                font-size: 18px;
+            }
+        }
+    }
+  }
+// Faq Section
