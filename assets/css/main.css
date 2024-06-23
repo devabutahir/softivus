@@ -44,6 +44,7 @@
   --bg6: #F6F9F8;
   --bg7: #F9FEF1;
   --bg8: #F9F7F5;
+  --box-bg: #F8F8F8;
   --ratting: #FEBD15;
   --section-bg: #F6F6F6;
   --danger: #F00;
@@ -780,6 +781,10 @@ p {
   font-weight: 800;
 }
 
+.box-bg {
+  background: var(--box-bg);
+}
+
 .ls {
   letter-spacing: 4px;
 }
@@ -958,6 +963,15 @@ iframe {
 
 .singleTab .nav-links {
   cursor: pointer;
+  transition: all 0.4s;
+}
+.singleTab .nav-links button {
+  transition: all 0.4s;
+}
+.singleTab .nav-links.active button {
+  background: var(--p1);
+  border-color: var(--p1);
+  color: var(--n0);
 }
 .singleTab .tabContents {
   position: relative;
@@ -976,18 +990,6 @@ iframe {
   z-index: 1;
   opacity: 1;
   transform: translateY(0);
-}
-.singleTab.pros-cros .nav-item {
-  border-radius: unset;
-  background: rgba(12, 169, 64, 0.7);
-  font-weight: 700;
-  color: rgba(var(--p2));
-}
-.singleTab.pros-cros .nav-item .active {
-  background: rgba(var(--p1));
-}
-.singleTab.pros-cros .nav-item button {
-  transition: var(--transition);
 }
 
 .nice-select {
@@ -2352,6 +2354,52 @@ iframe {
 }
 .customer-items p {
   border-bottom: 1px solid var(--cmn-border);
+}
+
+.working-section {
+  background: var(--n900);
+}
+
+.working-head .choose-badge {
+  border-color: var(--n0);
+  color: var(--n0);
+}
+.working-head p {
+  color: rgba(255, 255, 255, 0.8);
+  font-family: var(--body-font);
+  max-width: 356px;
+}
+
+.working-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.working-item .working-list i {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--n0);
+  width: 24px;
+  height: 24px;
+  padding: 2px;
+}
+.working-item .work-serial {
+  font-size: 88px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 120%;
+  opacity: 0.1;
+  color: var(--n0);
+}
+
+.template-responsive {
+  border-radius: 100px;
+  border: 1px solid rgba(16, 16, 16, 0.1);
+  background: #F8F8F8;
+}
+.template-responsive .nav-links {
+  width: initial !important;
 }
 
 .hero-section {

@@ -322,21 +322,12 @@ $(document).ready(() => {
         },
       });
        // Sponsor Slider //
-      const sponsorwrapper = new Swiper(".sponsor-wrapper", {
-        spaceBetween: 0,
+      const sponsorwrapper = new Swiper(".template-responsive", {
+        spaceBetween: 16,
         speed: 1200,
-        loop: true,
-        autoplay: {
-          delay: 1500,
-          disableOnInteraction: false,
-        },
-        navigation: {
-          nextEl: ".swiper-button-prevteam",
-          prevEl: ".swiper-button-nextteam",
-        },
         breakpoints: {
           1399: {
-            slidesPerView: 5,
+            slidesPerView: 9,
           },
           991: {
             slidesPerView: 4,
@@ -514,14 +505,14 @@ $(document).ready(() => {
 
       // Custom Tabs
       $(".tablinks .nav-links").each(function () {
-        var targetTab = $(this).closest(".singletab");
+        var targetTab = $(this).closest(".singleTab");
         targetTab.find(".tablinks .nav-links").each(function() {
           var navBtn = targetTab.find(".tablinks .nav-links");
           navBtn.click(function(){
             navBtn.removeClass('active');
             $(this).addClass('active');
             var indexNum = $(this).closest("li").index();
-            var tabcontent = targetTab.find(".tabcontents .tabitem");
+            var tabcontent = targetTab.find(".tabContents .tabItem");
             $(tabcontent).removeClass('active');
             $(tabcontent).eq(indexNum).addClass('active');
           });

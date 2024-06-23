@@ -325,3 +325,55 @@
 }
 // Customer Review Section
 
+// Working Section
+.working-section{
+    background: var(--n900);
+}
+.working-head{
+    .choose-badge{
+        border-color: var(--n0);
+        color: var(--n0);
+    }
+    p{
+       color: rgba(255, 255, 255, 0.80);
+       font-family: var(--body-font);
+       max-width: 356px;
+    }
+}
+.working-item{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    .working-list{
+        i{
+            background: rgba(255, 255, 255, 10%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--n0);
+            width: 24px;
+            height: 24px;
+            padding: 2px;
+        }
+    }
+    .work-serial{
+        font-size: 88px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 120%;
+        opacity: 0.1;
+        color: var(--n0);
+    }
+}
+// Working Section
+
+// Template Section
+.template-responsive{
+    border-radius: 100px;
+    border: 1px solid rgba(16, 16, 16, 0.10);
+    background: #F8F8F8;
+    .nav-links{
+        width: initial !important;
+    }
+}
+// Template Section
+

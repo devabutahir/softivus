@@ -199,6 +199,9 @@ p{
 .fw-800{
 	font-weight: 800;
 }
+.box-bg{
+	background: var(--box-bg);
+}
 .ls{
 	letter-spacing: 4px;
 }
@@ -385,6 +388,17 @@ iframe {
 .singleTab{
 	.nav-links{
 		cursor: pointer;
+		transition: all 0.4s;
+		button{
+			transition: all 0.4s;
+		}
+		&.active{
+			button{
+				background: var(--p1);
+				border-color: var(--p1);
+				color: var(--n0);
+			}
+		}
 	}
 	.tabContents {
 		position: relative;
@@ -401,20 +415,6 @@ iframe {
 				z-index: 1;
 				opacity: 1;
 				transform: translateY(0);
-			}
-		}
-	}
-	&.pros-cros{
-		.nav-item{
-			border-radius: unset;
-			background: rgba(12, 169, 64, 0.70);
-			font-weight: 700;
-			color: rgba(var(--p2));
-			.active{
-				background: rgba(var(--p1));
-			}
-			button{
-				transition: var(--transition);
 			}
 		}
 	}
