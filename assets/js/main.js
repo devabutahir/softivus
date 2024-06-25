@@ -209,6 +209,27 @@ $(document).ready(() => {
       });
       //--Global SideBar--
 
+      //--- Custom Tilt Js Start ---//
+      const tilt = document.querySelectorAll(".tilt");
+      VanillaTilt.init(tilt, {
+        reverse: true,
+        max: 15,
+        speed: 400,
+        scale: 1.01,
+        glare: true,
+        reset: true,
+        perspective: 800,
+        transition: true,
+        "max-glare": 0.45,
+        "glare-prerender": false,
+        gyroscope: true,
+        gyroscopeMinAngleX: -45,
+        gyroscopeMaxAngleX: 45,
+        gyroscopeMinAngleY: -45,
+        gyroscopeMaxAngleY: 45,
+      });
+      //--- Custom Tilt Js End ---//
+
       //--== Aos Animation ==--//
       $(document).ready(function () {
         $('.title').attr({
@@ -411,17 +432,13 @@ $(document).ready(() => {
         },
       });
       //--Follow Wrapper Slider --//
-      const followwrapper = new Swiper(".live-wrapper", {
+      const explorewrapper = new Swiper(".explore-wrapper", {
         spaceBetween: 24,
         speed: 1400,
         loop: true,
         navigation: {
           nextEl: ".swiper-button-prevteam04",
           prevEl: ".swiper-button-nextteam04",
-        },
-        autoplay: {
-          delay: 1200,
-          disableOnInteraction: false,
         },
         breakpoints: {
           1199: {
