@@ -275,6 +275,42 @@ $(document).ready(() => {
       }
       //--== Progress Bar ==--//
 
+      //--== Hero TextAnimation ==--//
+      const texts = ["Unique Rifat", "Freelancer", "UI/UX Designer", "Web Designer", "Web Developer"];
+      let count = 0;
+      let index = 0;
+      let currentText = '';
+      let letter = '';
+      let isDeleting = false;
+
+      (function type() {
+          if (count === texts.length) {
+              count = 0;
+          }
+          currentText = texts[count];
+
+          if (!isDeleting) {
+              letter = currentText.slice(0, ++index);
+          } else {
+              letter = currentText.slice(0, --index);
+          }
+
+          document.querySelector('.text').textContent = letter;
+          document.querySelector('.text').style.opacity = 1;
+
+          if (!isDeleting && letter.length === currentText.length) {
+              isDeleting = true;
+              setTimeout(type, 2000); // Delay before deleting the word
+          } else if (isDeleting && letter.length === 0) {
+              isDeleting = false;
+              count++;
+              setTimeout(type, 500); // Delay before typing the next word
+          } else {
+              setTimeout(type, isDeleting ? 40 : 100); // Typing and deleting speed
+          }
+      })();
+      //--== Hero TextAnimation ==--//
+
        //--== Nice Select ==--//
        $('select').niceSelect();
        //--== Nice Select ==--//

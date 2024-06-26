@@ -706,18 +706,130 @@
 
 // Efficient Section
 .efficient-wrapper{
+    display: flex;
+    justify-content: center;
    .efficient-item{
     position: relative;
     width: 15%;
+    z-index: 1;
     .octagon-shape{
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         width: 300px;
-        height: 300px;
+        z-index: -1;
+    }
+   }
+   .odometer-digit-inner{
+        left: initial !important;
+   }
+   @include maxQuery(991){
+    flex-wrap: wrap;
+    .efficient-item{
+       width: calc(90% / 3);
+       margin: 70px 0;
+    }
+   }
+   @include maxQuery(575){
+    flex-wrap: wrap;
+    .efficient-item{
+       width: calc(90% / 3);
+       margin: 30px 0;
+    }
+   }
+   @include maxQuery(480){
+    flex-wrap: wrap;
+    .efficient-item{
+       width: calc(90% / 2);
+       margin: 60px 0;
     }
    }
 }
+.achevment-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    .achevment-item{
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        border: 1px solid var(--cmn-border);
+        border-radius: 10px;
+        padding: 24px 32px;
+        background: var(--n0);
+        .achevment-logo{
+            width: 50px;
+        }
+        .envato-logo{
+            width: 140px;
+        }
+    }
+    @include maxQuery(991){
+        gap: 14px;
+    }
+    @include maxQuery(991){
+        .achevment-item{
+            gap: 14px;
+            padding: 16px 20px;
+            .achevment-logo{
+                width: 50px;
+            }
+            .envato-logo{
+                width: 100px;
+            }
+        }
+    }
+}
 // Efficient Section
+
+// Product Section
+.product-side-panel{
+    .product-inner{
+        background: var(--n0);
+        border-right: 1px solid var(--cmn-border);
+        padding-right: 20px;
+        .filter-add{
+           form{
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--cmn-border);
+            border-radius: 4px;
+            input{
+                width: 100%;
+                outline: none;
+                border: unset;
+                padding: 8px 8px;
+                font-size: 14px;
+            }
+            ::placeholder{
+                font-size: 14px;
+            }
+            i{
+                color: var(--pp-clr);
+                padding-right: 8px;
+                font-size: 14px;
+            }
+           } 
+        }
+        .product-box{
+            .product-item-list{
+                li{
+                    a{
+                        img{
+                            width: 26px;
+                        }
+                        transition: all 0.4s;
+                        &:hover{
+                            color: var(--p1);
+                            padding-left: 4px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// Product Section
 
