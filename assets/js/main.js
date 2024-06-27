@@ -128,12 +128,25 @@ $(document).ready(() => {
 
     // Text Circle 
     const text = document.querySelector(".texta");
-    text.innerHTML = text.innerText
-        .split("")
-        .map(
-        (char, i) => `<span style="transform:rotate(${i * 9}deg)">${char}</span>`
-        )
-    .join("");
+    if (text) {
+        console.log("Element with class 'texta' found.");
+        console.log("Inner text length:", text.innerText.length);
+        if (text.innerText.length > 10) { // Adjust this length condition as needed
+            console.log("Text length condition met. Transforming text.");
+            text.innerHTML = text.innerText
+                .split("")
+                .map(
+                    (char, i) => `<span style="transform:rotate(${i * 9}deg)">${char}</span>`
+                )
+                .join("");
+            console.log("Text transformation completed.");
+        } else {
+            console.log("Text length condition not met.");
+        }
+    } else {
+        console.log("Element with class 'texta' not found.");
+    }
+  
 
 
     // Click to Scroll Top
@@ -209,6 +222,12 @@ $(document).ready(() => {
       });
       //--Global SideBar--
 
+      //--- Custom Sidebar ---//
+      $(".remove-click").on("click", function (e) {
+        $(".subside-barmenu").toggleClass("active");
+      });
+      //--- Custom Sidebar Start ---//
+
       //--- Custom Tilt Js Start ---//
       const tilt = document.querySelectorAll(".tilt");
       VanillaTilt.init(tilt, {
@@ -274,42 +293,6 @@ $(document).ready(() => {
           });
       }
       //--== Progress Bar ==--//
-
-      //--== Hero TextAnimation ==--//
-      const texts = ["Unique Rifat", "Freelancer", "UI/UX Designer", "Web Designer", "Web Developer"];
-      let count = 0;
-      let index = 0;
-      let currentText = '';
-      let letter = '';
-      let isDeleting = false;
-
-      (function type() {
-          if (count === texts.length) {
-              count = 0;
-          }
-          currentText = texts[count];
-
-          if (!isDeleting) {
-              letter = currentText.slice(0, ++index);
-          } else {
-              letter = currentText.slice(0, --index);
-          }
-
-          document.querySelector('.text').textContent = letter;
-          document.querySelector('.text').style.opacity = 1;
-
-          if (!isDeleting && letter.length === currentText.length) {
-              isDeleting = true;
-              setTimeout(type, 2000); // Delay before deleting the word
-          } else if (isDeleting && letter.length === 0) {
-              isDeleting = false;
-              count++;
-              setTimeout(type, 500); // Delay before typing the next word
-          } else {
-              setTimeout(type, isDeleting ? 40 : 100); // Typing and deleting speed
-          }
-      })();
-      //--== Hero TextAnimation ==--//
 
        //--== Nice Select ==--//
        $('select').niceSelect();

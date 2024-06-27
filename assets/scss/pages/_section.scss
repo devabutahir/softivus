@@ -831,5 +831,127 @@
         }
     }
 }
+.product-right-pannel{
+    .tabItem{
+        display: none;
+        &.active{
+            display: block;
+        }
+    } 
+    .template-head{
+        li{
+            button{
+                color: var(--pp-clr) !important;
+                opacity: 0.5;
+            }
+            .filter{
+                opacity: 1;
+            }
+            &.active{
+                button{
+                    background: transparent;
+                    opacity: 1;
+                }
+                .filter{
+                    color: var(--p1) !important;
+                }
+            }
+        }
+    }
+}
+
+.subside-barmenu {
+	@include maxQuery(991){
+        width: 290px;
+        height: 100%;
+        position: fixed;
+        z-index: 99999;
+        background: #000;
+        left: -320px;
+        top: 0;
+        transition: all 0.4s;
+        overflow-y: scroll;
+        .product-inner{
+            padding: 24px;
+        }
+	.remove-click {
+		&:hover {
+			cursor: pointer;
+		}
+		i {
+			font-size: 22px;
+			color: var(--p1);
+		}
+	}
+    &.active{
+        left: 0;
+    }
+    }
+}
+.product-icon{
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--cmn-border);
+    svg{
+        width: 24px;
+        height: 24px;
+        path{
+            stroke: var(--pp-clr); 
+        }
+    }
+}
 // Product Section
+
+// Product Details Section
+.product-detais-right{
+    .product-detais-inner{
+        background: var(--n0);
+        border-radius: 5px;
+        .product-details-item{
+            .tem-info{
+                img{
+                    width: 40px;
+                }
+            }
+            .tags{
+                li{
+                    a{
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: var(--n00);
+                        background: #f6f6f6;
+                        padding: 6px 16px;
+                        border-radius: 5px;
+                        text-align: center;
+                        display: inline-block;
+                        transition: all 0.4s;
+                        text-transform: capitalize;
+                        &:hover{
+                            color: var(--n0);
+                            background: var(--p1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// Product Details Section
+
+// Use This Section
+.use-this-item{
+    border: 1px solid var(--cmn-border);
+    border-radius: 10px;
+    padding: 32px 24px;
+    background: var(--n0);
+    transition: all 0.4s;
+    height: 100%;
+    img{
+        width: 49px;
+    }
+    &:hover{
+        border-color: var(--p1);
+    }
+}
+// Use This Section
 
