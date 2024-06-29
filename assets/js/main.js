@@ -563,6 +563,89 @@ $(document).ready(() => {
       $(".currentYear").text(new Date().getFullYear());
       //--== Current Year ==--//
       
+      //-- Use Gsap Animation --// 
+      // Visible From Right Animation
+      if(document.querySelector('.visible-from-right')){
+        let visibleFromRight = document.querySelectorAll(".visible-from-right")
+        visibleFromRight.forEach((visibleFromRight) => {
+          let split_item = new SplitText(visibleFromRight, { type: "chars, words" })
+          gsap.from(split_item.chars, { duration: 1, x: 95, autoAlpha: 0, stagger: 0.15 });
+        })
+      }
+
+      // Visible From Right Slowly Animation
+      let visibleSlowlyRight = document.querySelectorAll(".visible-slowly-right");
+      if ($(visibleSlowlyRight).length > 0) {
+        let char_come = gsap.utils.toArray(visibleSlowlyRight);
+        char_come.forEach((char_come) => {
+          let split_char = new SplitText(char_come, {
+            type: "chars, words",
+            lineThreshold: 0.5,
+          });
+          const tl2 = gsap.timeline({
+            scrollTrigger: {
+              trigger: char_come,
+              start: "top 90%",
+              end: "bottom 60%",
+              scrub: false,
+              markers: false,
+              toggleActions: "play none none none",
+            },
+          });
+          tl2.from(split_char.chars, {
+            duration: 0.8,
+            x: 70,
+            autoAlpha: 0,
+            stagger: 0.03,
+          });
+        });
+      }
+
+      // Visible From Bottom Animation
+      let visibleFromBottom = gsap.utils.toArray(".visible-from-bottom");
+      visibleFromBottom.forEach(splitArea => {
+        const trigger = gsap.timeline({
+          scrollTrigger: {
+            trigger: splitArea,
+            start: 'top 90%',
+            end: 'bottom 60%',
+            scrub: false,
+            markers: false,
+          }
+        });
+        const contentSplitted = new SplitText(splitArea, { type: "words, lines" });
+        gsap.set(splitArea, { perspective: 400 });
+        contentSplitted.split({ type: "lines" })
+        trigger.from(contentSplitted.lines, { duration: 1, delay: 0.3, opacity: 0, rotationX: -75, force3D: true, transformOrigin: "top center -50", stagger: 0.1 });
+      });
+  
+      // Visible Slowly From Bottom Animation 
+      const visibleSlowlyBottom = document.querySelectorAll(".visible-slowly-bottom");
+      function visibleSlowly() {
+        visibleSlowlyBottom.forEach(splitArea => {
+          if (splitArea.anim) {
+            splitArea.anim.progress(1).kill();
+            splitArea.split.revert();
+          }
+          splitArea.split = new SplitText(splitArea, {
+            type: "lines,words,chars",
+            linesClass: "split-line"
+          });
+          splitArea.anim = gsap.from(splitArea.split.chars, {
+            scrollTrigger: {
+              trigger: splitArea,
+              toggleActions: "restart pause resume reverse",
+              start: 'top 90%',
+            },
+            duration: 0.8,
+            ease: "circ.out",
+            y: 70,
+            stagger: 0.02
+          });
+        });
+      }
+      ScrollTrigger.addEventListener("refresh", visibleSlowly);
+      visibleSlowly();
 
 });
 

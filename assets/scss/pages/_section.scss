@@ -903,6 +903,22 @@
 // Product Section
 
 // Product Details Section
+.custom-bgadding{
+    background: url(../../assets/images/icon/element-bg.png) no-repeat center center;
+    background-size: cover;
+    z-index: 1;
+    .element-addingn{
+        position: absolute;
+        bottom: -500px;
+        left: 0;
+        z-index: -1;
+    }
+    &.style-hire{
+        .hire-us{
+            width: 220px;
+        }
+    }
+}
 .product-detais-right{
     .product-detais-inner{
         background: var(--n0);
@@ -954,4 +970,66 @@
     }
 }
 // Use This Section
+
+// Hire Us Section
+.hire-item{
+    input,textarea{
+        width: 100%;
+        border-radius: 10px;
+        border: unset;
+        border: 1px solid var(--cmn-border);
+        outline: none;
+        background: var(--n0);
+        font-size: 14px;
+        padding: 10px 20px 12px;
+    }   
+    .nice-select{
+        width: 100%;
+        border-radius: 10px;
+        border: unset;
+        border: 1px solid var(--cmn-border);
+        outline: none;
+        background: var(--n0);
+        font-size: 14px;
+        padding: 14px 20px;
+        .current{
+            color: var(--pp-clr);
+            font-size: 14px;
+        }
+        &::after{
+            border-color: var(--pp-clr);
+        }
+        .list{
+            background: var(--n0);
+        }
+    }
+    .choose-file{
+       color: var(--pp-clr);
+    }
+    ::placeholder{
+        color: var(--pp-clr);
+        font-size: 14px;
+    }    
+}
+// Hire Us Section
+
+// Project mind Section
+.project-mind-left{
+    @include maxQuery(1199){
+        img{
+            width: 180px;
+        }
+    }
+    @include maxQuery(991){
+        img{
+            width: 120px;
+        }
+    }
+}
+.project-mind-right{
+    .fs-five{
+        line-height: 26px;
+    }
+}
+// Project mind Section
 
