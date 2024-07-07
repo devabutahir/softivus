@@ -1,4 +1,22 @@
 //Footer Section
+.footer-section{
+    position: relative;
+    &::before{
+        content: "";
+        aspect-ratio: 1 / 1;
+        background: radial-gradient(50% 50% at 50% 50%, rgb(107, 107, 192) 0%, rgba(100, 100, 185, 0) 100%);
+        bottom: -200px;
+        flex: 0 0 auto;
+        left: 50%;
+        opacity: 0.4;
+        overflow: hidden;
+        pointer-events: none;
+        position: absolute;
+        transform: translateX(-50%);
+        width: 1094px;
+        z-index: 1;
+    }
+}
 .footer-top{
     margin-left: 312px;
     .footer-widget-item{
