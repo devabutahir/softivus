@@ -1,19 +1,26 @@
 // default font family
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
+@font-face {
+    font-family: 'CustomFont'; 
+    src: url('../fonts/Gilroy-Medium.ttf') format('truetype');
+}
 
 //default root
 :root {
 	/* Font Family */
-	--body-font: "Outfit", sans-serif;
-	--sub-font:  "Outfit", sans-serif;
+	--body-font: "CustomFont", sans-serif;
+	--sub-font:  "CustomFont", sans-serif;
+	--heading-font:  "Oswald", serif;
 	/* Transition */
 	--transition: all 0.5s ease-in-out;
 
 	/* Color styles */
 	--n0: #fff;
 	--n00: #000;
-	--p1: #75F;
+	--p1: #00FF38;
+	--p2: #5034FA;
+	--s1: #FFAB00;
 	--p100: #2143D4;
 	--p200: #1DCFAF;
 	--p300: #B021D4;

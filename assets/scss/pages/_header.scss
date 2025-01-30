@@ -29,19 +29,6 @@
                         font-size: 28px;
                     }
                 }
-                &::before{
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    content: "";
-                    left: 0;
-                    top: 0;
-                    background: url(../../assets/images/banner/banner-bg.png) no-repeat center center;
-                    background-size: cover;
-                    filter: blur(15px);
-                    -webkit-filter: blur(15px);
-                    z-index: -1;
-                }
             }
         }
         @include minQuery(992) {
@@ -61,7 +48,7 @@
                         right: 0px;
                         z-index: -1;
                         transition: all 1s ease;
-                        color: var(--n900);
+                        color: var(--n0);
                         opacity: 0.7;
                     }
                 }
@@ -70,7 +57,7 @@
                     margin: 10px auto 0;
                     .menu-link{
                         a{
-                            color: var(--n900);
+                            color: var(--n0);
                             &:hover{
                                 color: var(--p1);
                             }
@@ -80,7 +67,7 @@
             }
             .menu-item,
             .menu-link {
-                color: var(--n900);
+                color: var(--n0);
                 .active-button, a {
                     transition: all 0.5s;
                     font-size: 16px; 
@@ -128,7 +115,7 @@
                 .menu-item {
                     padding: 34px 0;
                     a{
-                        color: var(--n900);
+                        color: var(--n0);
                     }
                 }
                 .sub-menu {

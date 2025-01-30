@@ -325,6 +325,34 @@ $(document).ready(() => {
   
     //--== Swipper SLider Init Area ==--//
 
+    //Partnered
+    const partnered__wrapper = new Swiper(".partnered-wrapper", {
+      spaceBetween: 30,
+      speed: 6000,
+      loop: true,
+      slidesPerView: 'auto',
+      centeredSlides: true,
+      autoplay: {
+        delay: 1,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        991: {
+          slidesPerView: 10,
+          spaceBetween: 30,
+        },
+        600: {
+          spaceBetween: 50,
+        },
+        400: {
+          spaceBetween: 30,
+        },
+        0: {
+          spaceBetween: 22,
+        },
+      },
+    });
+
     // Testimonial Section Version 01 //
     const servicewrapper = new Swiper(".service-wrapper", {
       spaceBetween: 0,
