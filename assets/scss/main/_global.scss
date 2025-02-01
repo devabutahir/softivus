@@ -211,6 +211,22 @@ p{
 .fw-800{
 	font-weight: 800;
 }
+
+.bg1-color{
+	background: var(--bg1);
+}
+.bg2-color{
+	background: var(--bg2);
+}
+.bg3-color{
+	background: var(--bg3);
+}
+.bg4-color{
+	background: var(--bg4);
+}
+.bg5-color{
+	background: var(--bg5);
+}
 .box-bg{
 	background: var(--box-bg);
 }
@@ -988,9 +1004,12 @@ text-transform: uppercase;
 	.swiper-wrapper {
 		transition-timing-function: linear !important;
 	}
-	// .swiper-slide{
-	// 	width: 370px !important;
-	// }
+	.text-itm{
+		width: auto !important;
+	}
+	.images-itm{
+		width: 38px !important;
+	}
 	.partnered-item{
 		font-size: 30px;
 		font-weight: 700;
@@ -1014,6 +1033,17 @@ text-transform: uppercase;
 			width: 38px !important;
 		}
 	}
+	@include maxQuery(1199){
+		.partnered-item{
+			font-size: 22px;
+			line-height: 120%;
+		}
+		.partner-icon{
+			width: 29px;
+			min-width: 29px;
+			height: 29px;
+		}
+	}
 }
 //Text Custom SLide
 
@@ -1028,3 +1058,46 @@ text-transform: uppercase;
 	box-shadow: none;
   }
 //Tilt Js
+
+
+
+//check circle progress bar
+.custom-circle-progress-bar{
+	.circle{
+		position: relative;
+		width: 100px;
+		height: 100px;
+		.bar{
+			canvas{
+				width: 100px;
+				height: 100px;
+			}
+		}
+		.box{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			span{
+				font-size: 28px;
+				font-weight: 400;
+				color: var(--n900);
+			}
+		}
+	}
+}
+//check circle progress bar
+
+
+//Custom Imgaes Masking 
+.masked-image {
+	width: 300px;
+	height: 300px;
+	background-image: url('../../assets/images/about/mask-solid.png'); 
+	background-position: cover;
+	background-size: 100% 100%;
+	mask-image: url('../../assets/images/about/mask-img.png'); 
+	mask-size: cover;
+	mask-repeat: no-repeat;
+}
+//Custom Imgaes Masking 

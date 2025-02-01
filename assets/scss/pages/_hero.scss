@@ -205,6 +205,38 @@
             color: var(--n900);
         }
     }
+    &.style2{
+        border: 1px solid var(--p1);
+        .texta{
+            span{
+                color: var(--p1);
+            }
+        }
+        .circle-border-area{
+            border: 1px solid var(--p1);
+            width: 127px;
+            height: 127px;
+            .circle-arrow{
+                width: 62px;
+                height: 62px;
+                border-radius: 50%;
+                background: linear-gradient(270deg, #5034FA 0%, #FF825C 100%);
+                z-index: 1;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                transition: all 0.4s;
+                i{
+                    color: var(--n0);
+                    font-size: 28px;
+                }
+                &:hover{
+                    transform: translate(-50%, -50%) rotate(180deg);
+                }
+            }
+        }
+    }
 }
 //Hero Style Scss
            

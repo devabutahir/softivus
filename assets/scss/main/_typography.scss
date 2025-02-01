@@ -396,10 +396,10 @@ li {
 	}
 
 	.pt-120 {
-		padding-top: 60px;
+		padding-top: 80px;
 	}
 	.pb-120 {
-		padding-bottom: 60px;
+		padding-bottom: 80px;
 	}
 
 	.banner-section .overlay .sec-img{
@@ -439,22 +439,56 @@ li {
 	}
 
 	.pt-120 {
-		padding-top: 50px;
+		padding-top: 80px;
 	}
 	.pb-120 {
-		padding-bottom: 50px;
+		padding-bottom: 80px;
 	}
 }
 
 //Section Title
 .section-title{
+	.section-subtitle{
+		font-size: 20px;
+		.line{
+			width: 60px;
+			height: 2px;
+		}
+	}
+	.display-five{
+		letter-spacing: -0.5px;
+		.p1-clr{
+			color: var(--p1);
+		}
+	}
 	.choose-badge{
 		border: 1px solid var(--n00);
 		border-radius: 100px;
 		font-size: 16px;
 		font-weight: 600;
 	}
+	@include maxQuery(1199){
+		.section-subtitle{
+			font-size: 18px;
+		}
+	}
+	@include maxQuery(991){
+		.section-subtitle{
+			font-size: 16px;
+			.line{
+				width: 30px;
+				height: 2px;
+			}
+		}
+	}
 	@include maxQuery(575){
+		.section-subtitle{
+			font-size: 14px;
+			.line{
+				width: 6px;
+				height: 2px;
+			}
+		}
 		h2{
 			font-size: 28px;
 		}
@@ -501,3 +535,5 @@ li {
 	bottom: 30px;
 	transform: translateY(0%);
 }
+
+

@@ -14,6 +14,46 @@
 
 $(document).ready(() => {
   "use strict";
+
+  // Custom Progress bar 
+  let options = {
+    startAngle: -1.65,
+    size: 150,
+    value: 0, 
+    thickness: 4,
+    emptyFill: "#fff",
+    fill: { gradient: ['#1FB254', '#1FB254'] }
+  };
+  $(".bar").each(function () {
+      $(this).circleProgress(options);
+  });
+  function animateProgress() {
+      let viewportTop = $(window).scrollTop();
+      let viewportBottom = viewportTop + $(window).height();
+
+      $(".bar").each(function () {
+          let elementTop = $(this).offset().top;
+          let elementBottom = elementTop + $(this).outerHeight();
+
+          // Check if the element is within the viewport (either entering from top or bottom)
+          if ((elementTop < viewportBottom - 50 && elementBottom > viewportTop + 50)) {
+              if (!$(this).data("animated")) {
+                  let value = $(this).closest(".circle, .js, .node, .react").data("value");
+                  $(this).circleProgress({ value: value }).on('circle-animation-progress', function (event, progress, stepValue) {
+                      $(this).parent().find("span").text(String(stepValue.toFixed(2).substr(2)) + "%");
+                  });
+                  $(this).data("animated", true);
+              }
+          }
+      });
+  }
+  $(".percentage1").data("value", 0.90);
+  $(".percentage2").data("value", 0.95);
+  $(".percentage3").data("value", 0.90);
+  $(".percentage4").data("value", 0.60);
+  $(window).on("scroll", animateProgress);
+  animateProgress();
+  // Custom Progress bar 
      
     //--== Preloader ==--//
     setTimeout(function() {
@@ -31,101 +71,99 @@ $(document).ready(() => {
     // ScrollTrigger.update();
 
 
- // lenis matchMedia Init
- ScrollTrigger.matchMedia({
-  "(min-width: 992px)": function() {
-  
-
-    // horizontal scroll 
-    // const horizontalSections = document.querySelectorAll(".horizontal");
-    // if(horizontalSections){
-    //   horizontalSections.forEach(section => {
-    //     let horizontalItems = gsap.utils.toArray(section.querySelectorAll(".horizontal-item"));
-    //     gsap.to(horizontalItems, {
-    //       xPercent: -50 * (horizontalItems.length - 1),
-    //       ease: "sine.out",
-    //       scrollTrigger: {
-    //         trigger: section,
-    //         pin: true,
-    //         scrub: 9,
-    //         snap: 2 / (horizontalItems.length - 4),
-    //         end: "+=" + section.offsetWidth
-    //       }
-    //     });
-    //   });
-    // }
-    const horizontalSections = document.querySelectorAll(".horizontal");
-
-    if (horizontalSections) {
-      horizontalSections.forEach(section => {
-        let horizontalItems = gsap.utils.toArray(section.querySelectorAll(".horizontal-item"));
+  // lenis matchMedia Init
+  ScrollTrigger.matchMedia({
+    "(min-width: 992px)": function() {
     
-        // Set the width of the container to fit all items horizontally
-        gsap.set(section, { 
-          width: `${100 * horizontalItems.length / 3}%`
-        });
-    
-        // Set the width of each item to be a fraction of the container width
-        horizontalItems.forEach((item) => {
-          gsap.set(item, { 
-            width: `${100 / horizontalItems.length}%`
+
+      // horizontal scroll 
+      // const horizontalSections = document.querySelectorAll(".horizontal");
+      // if(horizontalSections){
+      //   horizontalSections.forEach(section => {
+      //     let horizontalItems = gsap.utils.toArray(section.querySelectorAll(".horizontal-item"));
+      //     gsap.to(horizontalItems, {
+      //       xPercent: -50 * (horizontalItems.length - 1),
+      //       ease: "sine.out",
+      //       scrollTrigger: {
+      //         trigger: section,
+      //         pin: true,
+      //         scrub: 9,
+      //         snap: 2 / (horizontalItems.length - 4),
+      //         end: "+=" + section.offsetWidth
+      //       }
+      //     });
+      //   });
+      // }
+      const horizontalSections = document.querySelectorAll(".horizontal");
+
+      if (horizontalSections) {
+        horizontalSections.forEach(section => {
+          let horizontalItems = gsap.utils.toArray(section.querySelectorAll(".horizontal-item"));
+      
+          // Set the width of the container to fit all items horizontally
+          gsap.set(section, { 
+            width: `${100 * horizontalItems.length / 3}%`
+          });
+      
+          // Set the width of each item to be a fraction of the container width
+          horizontalItems.forEach((item) => {
+            gsap.set(item, { 
+              width: `${100 / horizontalItems.length}%`
+            });
+          });
+      
+          // Create a GSAP timeline
+          let tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: section,
+              pin: true,
+              scrub: 4,
+              snap: 1 / (horizontalItems.length - 1),
+              end: "+=" + section.offsetWidth * (horizontalItems.length - 1)
+            }
+          });
+      
+          // Initial slower scrolling animation
+          tl.to(horizontalItems, {
+            xPercent: -25 * (horizontalItems.length - 1), // Adjust for initial slow scroll
+            ease: "none",
+            duration: 3 // Duration for the initial slow scroll
+          });
+      
+          // Faster scrolling animation
+          tl.to(horizontalItems, {
+            xPercent: -50 * (horizontalItems.length - 1),
+            ease: "none",
+            duration: 2 // Duration for the faster scroll
           });
         });
-    
-        // Create a GSAP timeline
-        let tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: section,
-            pin: true,
-            scrub: 4,
-            snap: 1 / (horizontalItems.length - 1),
-            end: "+=" + section.offsetWidth * (horizontalItems.length - 1)
-          }
-        });
-    
-        // Initial slower scrolling animation
-        tl.to(horizontalItems, {
-          xPercent: -25 * (horizontalItems.length - 1), // Adjust for initial slow scroll
-          ease: "none",
-          duration: 3 // Duration for the initial slow scroll
-        });
-    
-        // Faster scrolling animation
-        tl.to(horizontalItems, {
-          xPercent: -50 * (horizontalItems.length - 1),
-          ease: "none",
-          duration: 2 // Duration for the faster scroll
-        });
-      });
-    }
-    
+      }
+      
 
-    
+      
 
-  },
+    },
+    
+    // responsive
+    // "(max-width: 991px)": function() {
+
+    //   const horizontalSections = document.querySelectorAll(".horizontal");
+    //   if(horizontalSections){
+    //     horizontalSections.forEach(section => {
+    //       let horizontalItems = gsap.utils.toArray(section.querySelectorAll(".horizontal-item"));
+    //       gsap.to(horizontalItems, {
+    //         xPercent: -0 * (horizontalItems.length - 1),
+    //         scrollTrigger: {
+    //           pin: false,
+    //         }
+    //       });
+    //     });
+    //   }
+
+    // },
+
+  });
   
-  // responsive
-  // "(max-width: 991px)": function() {
-
-  //   const horizontalSections = document.querySelectorAll(".horizontal");
-  //   if(horizontalSections){
-  //     horizontalSections.forEach(section => {
-  //       let horizontalItems = gsap.utils.toArray(section.querySelectorAll(".horizontal-item"));
-  //       gsap.to(horizontalItems, {
-  //         xPercent: -0 * (horizontalItems.length - 1),
-  //         scrollTrigger: {
-  //           pin: false,
-  //         }
-  //       });
-  //     });
-  //   }
-
-  // },
-
-});
-  
- 
-
   // Text Circle 
   const text = document.querySelector(".texta");
   if (text) {
@@ -147,8 +185,6 @@ $(document).ready(() => {
       console.log("Element with class 'texta' not found.");
   }
   
-
-
   // Click to Scroll Top
   var ScrollTop = $(".scrollToTop");
   $('.scrollToTop').on('click', function () {
@@ -311,7 +347,6 @@ $(document).ready(() => {
     });
     //--== Magnigiq Popup Initial ==--//
     
-
     //--== Custom Navbar Header ==--//
     $('.navbar-toggle-btn').on('click', function () {
       $('.navbar-toggle-item').slideToggle(300);
@@ -324,7 +359,6 @@ $(document).ready(() => {
     //--== Custom Navbar Header ==--//
   
     //--== Swipper SLider Init Area ==--//
-
     //Partnered
     const partnered__wrapper = new Swiper(".partnered-wrapper", {
       spaceBetween: 30,
@@ -338,17 +372,42 @@ $(document).ready(() => {
       },
       breakpoints: {
         991: {
-          slidesPerView: 10,
           spaceBetween: 30,
         },
         600: {
-          spaceBetween: 50,
+          spaceBetween: 20,
         },
         400: {
-          spaceBetween: 30,
+          spaceBetween: 20,
         },
         0: {
-          spaceBetween: 22,
+          spaceBetween: 10,
+        },
+      },
+    });
+    const partnered__wrapper2 = new Swiper(".partnered-wrapper2", {
+      spaceBetween: 30,
+      speed: 6000,
+      loop: true,
+      slidesPerView: 'auto',
+      centeredSlides: true,
+      autoplay: {
+        delay: 1,
+        reverseDirection: true,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        991: {
+          spaceBetween: 30,
+        },
+        600: {
+          spaceBetween: 20,
+        },
+        400: {
+          spaceBetween: 20,
+        },
+        0: {
+          spaceBetween: 10,
         },
       },
     });
@@ -544,7 +603,6 @@ $(document).ready(() => {
       },
     });
     //Shop Details
-    //--== Swipper SLider Init Area ==--//
 
     //--== Custom Comment / Review Reply Box ==--//
     $(".reply").on("click", function () {
@@ -591,53 +649,6 @@ $(document).ready(() => {
     $(".currentYear").text(new Date().getFullYear());
     //--== Current Year ==--//
 
-    // Mouse Follower
-    const follower = document.querySelector(".mouse-follower .cursor-outline");
-    const dot = document.querySelector(".mouse-follower .cursor-dot");
-    window.addEventListener("mousemove", (e) => {
-      follower.animate(
-        [{
-          opacity: 1,
-          left: `${e.clientX}px`,
-          top: `${e.clientY}px`,
-          easing: "ease-in-out"
-        }],
-        {
-          duration: 3000,
-          fill: "forwards"
-        }
-      );
-      dot.animate(
-        [{
-          opacity: 1,
-          left: `${e.clientX}px`,
-          top: `${e.clientY}px`,
-          easing: "ease-in-out"
-        }],
-        {
-          duration: 1500,
-          fill: "forwards"
-        }
-      );
-    });
-
-    // Mouse Follower Hide Function
-    $("a, button").on('mouseenter mouseleave', function () {
-      $('.mouse-follower').toggleClass('hide-cursor');
-    });
-
-    var terElement = $('h1, h2, h3, h4, .display-one, .display-two, .display-three, .display-four, .display-five, .display-six');
-    $(terElement).on('mouseenter mouseleave', function () {
-      $('.mouse-follower').toggleClass('highlight-cursor-head');
-      $(this).toggleClass('highlight-cursor-head');
-    });
-    
-    var terElement = $('p');
-    $(terElement).on('mouseenter mouseleave', function () {
-      $('.mouse-follower').toggleClass('highlight-cursor-para');
-      $(this).toggleClass('highlight-cursor-para');
-    });
-      
     //-- Use Gsap Animation --// 
     // Visible From Right Animation
     if(document.querySelector('.visible-from-right')){
@@ -724,3 +735,17 @@ $(document).ready(() => {
 
 });
 
+
+// const observer = new IntersectionObserver((entries) => {
+//   entries.forEach((entry) => {
+//     if (entry.isIntersecting) {
+//       entry.target.classList.add('visible');
+//     } else {
+//       entry.target.classList.remove('visible');
+//     }
+//   });
+// });
+
+// // Select the element to observe
+// const target = document.querySelector('.observe-me');
+// observer.observe(target);
