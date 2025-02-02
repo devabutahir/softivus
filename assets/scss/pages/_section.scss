@@ -980,6 +980,19 @@
             height: 56px;
         }
     }
+    @include maxQuery(991){
+        .section-title{
+            p{
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+        .card-custom{
+            .circle{
+                margin: 0 auto;
+            }
+        }
+    }
 }
 // About Section
 
