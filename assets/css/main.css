@@ -18,7 +18,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
 @font-face {
   font-family: "CustomFont";
-  src: url("../fonts/Gilroy-Medium.ttf") format("truetype");
+  src: url("../webfonts/Gilroy-Medium.ttf") format("truetype");
 }
 :root {
   /* Font Family */
@@ -694,7 +694,7 @@ h5 > a,
 h6,
 h6 > a,
 .display-one, .display-two, .display-three, .display-four, .display-five, .display-six, .heading {
-  font-family: var(--heading-font);
+  font-family: var(--body-font);
   padding: 0;
   margin: 0;
   color: var(--n900);
@@ -3224,6 +3224,7 @@ iframe {
   font-weight: 700;
   line-height: 120%;
   text-transform: uppercase;
+  font-family: var(--heading-font);
 }
 .hero-section .hero-content h2 {
   font-family: var(--sub-font);
