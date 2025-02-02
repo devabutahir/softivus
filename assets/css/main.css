@@ -46,6 +46,7 @@
   --bg1: #FEF9F1;
   --bg2: #F1FEFD;
   --bg3: #F6F5F7;
+  --blackbg: #04001F;
   --bg4: #F1F7FE;
   --bg5: #FEF8F6;
   --bg6: #F6F9F8;
@@ -865,6 +866,10 @@ p {
   background: var(--n900);
 }
 
+.blackbg {
+  background: var(--blackbg);
+}
+
 .n900-clr {
   color: var(--n900);
 }
@@ -998,6 +1003,7 @@ iframe {
 .cmn-btn::before {
   height: 100%;
   width: 0%;
+  top: 0;
   left: 0;
   background: rgba(128, 97, 252, 0.829);
   z-index: -1;
@@ -1006,6 +1012,7 @@ iframe {
 .cmn-btn::after {
   height: 100%;
   width: 0%;
+  top: 0;
   left: 0;
   background: rgba(141, 113, 252, 0.967);
   z-index: -1;
@@ -3110,6 +3117,99 @@ iframe {
   }
 }
 
+.single-service-item {
+  border-bottom: 3px solid var(--blackbg);
+  border-radius: 8px;
+  padding: 32px;
+  height: 100%;
+  transition: all 0.4s;
+  position: relative;
+}
+.single-service-item .content h5 {
+  letter-spacing: 1px;
+}
+.single-service-item .content h5 a {
+  text-transform: uppercase;
+}
+.single-service-item .thumb-icon {
+  z-index: 1;
+  margin-left: 10px;
+}
+.single-service-item .thumb-icon .ser-ele {
+  position: absolute;
+  left: -14px;
+  bottom: -14px;
+  z-index: -1;
+  animation: circle 5s linear infinite;
+}
+.single-service-item p {
+  color: #C0BFC7;
+}
+.single-service-item .arrows {
+  width: 62px;
+  height: 61px;
+  border: 1px solid #201C38;
+  border-radius: 8px;
+  transition: all 0.5s;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.single-service-item .arrows i {
+  color: var(--n0);
+  font-size: 18px;
+}
+.single-service-item .cus-borer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.single-service-item:hover {
+  background: #050025;
+  transition: all 0.4s;
+  border-bottom: 3px solid var(--p1);
+}
+.single-service-item:hover .arrows {
+  background: var(--p1);
+}
+@media (max-width: 1399px) {
+  .single-service-item .arrows {
+    height: 56px;
+  }
+}
+@media (max-width: 1285px) {
+  .single-service-item .arrows {
+    height: 54px;
+    width: 56px;
+  }
+}
+@media (max-width: 1199px) {
+  .single-service-item {
+    border: 1px solid #201C38;
+  }
+  .single-service-item .arrows {
+    height: 50px;
+    right: 10px;
+    width: 50px;
+    top: 10px;
+  }
+  .single-service-item .cus-borer {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .single-service-item {
+    padding: 28px;
+  }
+}
+
+@keyframes circle {
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .hero-section {
   background: #04001F;
   padding: 170px 0 120px;

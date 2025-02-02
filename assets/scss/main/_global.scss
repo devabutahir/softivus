@@ -190,6 +190,9 @@ p{
 .n900-bg{
 	background: var(--n900);
 }
+.blackbg{
+	background: var(--blackbg);
+}
 .n900-clr{
 	color: var(--n900);
 }
@@ -314,6 +317,7 @@ iframe {
 	&::before{
 		height: 100%;
 		width: 0%;
+		top: 0;
 		left: 0;
 		background: rgba(128, 97, 252, 0.829);
 		z-index: -1;
@@ -322,6 +326,7 @@ iframe {
 	&::after{
 		height: 100%;
 		width: 0%;
+		top: 0;
 		left: 0;
 		background: rgba(141, 113, 252, 0.967);
 		z-index: -1;
