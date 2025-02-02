@@ -64,7 +64,7 @@
 }
 
 .cmn-borders {
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .display-one {
@@ -502,15 +502,52 @@ li {
 .section-title .display-five .p1-clr {
   color: var(--p1);
 }
+.section-title .custom-display {
+  font-size: 100px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+}
 .section-title .choose-badge {
   border: 1px solid var(--n00);
   border-radius: 100px;
   font-size: 16px;
   font-weight: 600;
 }
+@media screen and (max-width: 1700px) {
+  .section-title .custom-display {
+    font-size: 70px;
+    font-weight: 400;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+  }
+}
+@media (max-width: 1400px) {
+  .section-title .custom-display {
+    font-size: 58px;
+    font-weight: 400;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+  }
+}
+@media (max-width: 1399px) {
+  .section-title .custom-display {
+    font-size: 55px;
+    font-weight: 400;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+  }
+}
 @media (max-width: 1199px) {
   .section-title .section-subtitle {
     font-size: 18px;
+  }
+  .section-title .custom-display {
+    font-size: 48px;
+    font-weight: 400;
+    letter-spacing: -2px;
+    text-transform: uppercase;
   }
 }
 @media (max-width: 991px) {
@@ -521,6 +558,20 @@ li {
     width: 30px;
     height: 2px;
   }
+  .section-title .custom-display {
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+  }
+}
+@media (max-width: 767px) {
+  .section-title .custom-display {
+    font-size: 38px;
+    font-weight: 400;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+  }
 }
 @media (max-width: 575px) {
   .section-title .section-subtitle {
@@ -529,6 +580,9 @@ li {
   .section-title .section-subtitle .line {
     width: 6px;
     height: 2px;
+  }
+  .section-title .custom-display {
+    font-size: 33px;
   }
   .section-title h2 {
     font-size: 28px;
@@ -2296,6 +2350,9 @@ iframe {
   width: initial !important;
 }
 
+.template-items {
+  transition: all 0.5s;
+}
 .template-items.tilt {
   background: var(--box-bg);
 }
@@ -2345,16 +2402,17 @@ iframe {
 }
 .template-items .plugin-social .icons {
   position: relative;
-  background: #e2dbff;
-  border-radius: 5px;
+  background: #FFF;
+  box-shadow: 0px 56px 16px 0px rgba(166, 166, 166, 0), 0px 36px 14px 0px rgba(166, 166, 166, 0.01), 0px 20px 12px 0px rgba(166, 166, 166, 0.05), 0px 9px 9px 0px rgba(166, 166, 166, 0.09), 0px 2px 5px 0px rgba(166, 166, 166, 0.1);
+  border-radius: 8px;
   border: 1px solid var(--n0);
-  width: 37px;
-  height: 37px;
+  width: 39px;
+  height: 39px;
   transition: all 0.4s;
   box-shadow: rgba(100, 100, 111, 0.426) 0px 7px 29px 0px;
 }
 .template-items .plugin-social .icons img {
-  width: 20px;
+  width: 22px;
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -2407,13 +2465,14 @@ iframe {
   font-size: 14px;
 }
 .template-items .content .price {
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 32px;
+  font-weight: 500;
   line-height: 130%;
-  background: linear-gradient(90deg, #5034FA -1.81%, #FF825C 99.67%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--n900);
+}
+.template-items .content .delprice {
+  color: #3E3B53;
+  margin-top: 10px;
 }
 .template-items .content .cate-purchase img {
   width: 16px;
@@ -2475,6 +2534,9 @@ iframe {
 .template-items .envato-price-info svg path {
   stroke: var(--p1);
   fill: var(--p1);
+}
+.template-items:hover {
+  border-color: var(--p1);
 }
 .template-items:hover .thumb .click-arrow {
   visibility: visible;
@@ -2926,6 +2988,125 @@ iframe {
   }
   .digital-future-content .card-custom .circle {
     margin: 0 auto;
+  }
+}
+
+.working-video-wrap {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.working-video-wrap p {
+  max-width: 290px;
+}
+.working-video-wrap .working-video-inner {
+  display: flex;
+  align-items: center;
+}
+.working-video-wrap .working-video-inner video {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.working-video-wrap .working-video-inner .video-play-btn {
+  width: 120px;
+  height: 120px;
+  background: #101010;
+  border-radius: 50%;
+  margin-left: -40px;
+}
+.working-video-wrap .working-video-inner .video-play-btn i {
+  font-size: 28px;
+  color: var(--n0);
+}
+@media (max-width: 991px) {
+  .working-video-wrap {
+    display: grid;
+    justify-content: center;
+    gap: 14px 14px;
+  }
+  .working-video-wrap .working-video-inner {
+    justify-content: center;
+  }
+  .working-video-wrap .working-video-inner video {
+    width: 80px;
+    height: 80px;
+  }
+  .working-video-wrap .working-video-inner .video-play-btn {
+    width: 80px;
+    height: 80px;
+    margin-left: -20px;
+  }
+  .working-video-wrap .working-video-inner .video-play-btn i {
+    font-size: 20px;
+  }
+  .working-video-wrap p {
+    margin: 0 auto;
+  }
+}
+
+.progress-categroy-area .progress-category {
+  background: #F6F5F7;
+  border-radius: 12px;
+}
+.progress-categroy-area .progress-category .nice-select {
+  padding: 22px 24px;
+}
+.progress-categroy-area .progress-category .nice-select .current {
+  color: #3E3B53;
+  font-size: 16px;
+}
+.progress-categroy-area .progress-category .nice-select .list {
+  background: var(--n0);
+}
+.progress-categroy-area .progress-category .nice-select .list li {
+  font-size: 16px;
+}
+.progress-categroy-area .progress-category .nice-select::after {
+  right: 24px;
+}
+.progress-categroy-area .progress-search {
+  background: #F6F5F7;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+}
+.progress-categroy-area .progress-search input {
+  color: #3E3B53;
+  font-size: 16px;
+  padding: 8px 18px;
+  border: none;
+  outline: none;
+}
+.progress-categroy-area .progress-search button {
+  background: var(--p1);
+  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.progress-categroy-area .progress-search button i {
+  color: var(--n0);
+}
+.progress-categroy-area .progress-search ::-moz-placeholder {
+  color: #3E3B53;
+}
+.progress-categroy-area .progress-search ::placeholder {
+  color: #3E3B53;
+}
+@media (max-width: 1199px) {
+  .progress-categroy-area .progress-category .nice-select {
+    padding: 17px 24px;
+  }
+  .progress-categroy-area .progress-category .nice-select .list {
+    background: var(--n0);
+  }
+  .progress-categroy-area .progress-category .nice-select .list li {
+    font-size: 16px;
   }
 }
 

@@ -316,6 +316,7 @@
     }
 }
 .template-items{
+    transition: all 0.5s;
     &.tilt{
         background: var(--box-bg);
     }
@@ -360,15 +361,16 @@
         top: 12px;
         .icons{
             position: relative;
-            background: #e2dbff;
-            border-radius: 5px;
+            background: #FFF;
+            box-shadow: 0px 56px 16px 0px rgba(166, 166, 166, 0.00), 0px 36px 14px 0px rgba(166, 166, 166, 0.01), 0px 20px 12px 0px rgba(166, 166, 166, 0.05), 0px 9px 9px 0px rgba(166, 166, 166, 0.09), 0px 2px 5px 0px rgba(166, 166, 166, 0.10);
+            border-radius: 8px;
             border: 1px solid  var(--n0);
-            width: 37px;
-            height: 37px;
+            width: 39px;
+            height: 39px;
             transition: all 0.4s;
             box-shadow: rgba(100, 100, 111, 0.426) 0px 7px 29px 0px;
             img{
-                width: 20px;
+                width: 22px;
                 object-fit: contain;
             }
             .plugin-text{
@@ -424,13 +426,14 @@
             }
         }
         .price{
-            font-size: 20px;
-            font-weight: 700;
+            font-size: 32px;
+            font-weight: 500;
             line-height: 130%;
-            background: linear-gradient(90deg, #5034FA -1.81%, #FF825C 99.67%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--n900);
+        }
+        .delprice{
+            color: #3E3B53;
+            margin-top: 10px;
         }
         .cate-purchase{
             img{
@@ -505,6 +508,7 @@
         }
     }
     &:hover{
+        border-color: var(--p1);
         .thumb{
             .click-arrow{
                 visibility: visible;
@@ -995,4 +999,122 @@
     }
 }
 // About Section
+
+// Working Processing
+.working-video-wrap{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    p{
+        max-width: 290px;
+    }
+    .working-video-inner{
+        display: flex;
+        align-items: center;
+        video{
+           width: 120px;
+           height: 120px;
+           border-radius: 50%;
+           object-fit: cover; 
+        }
+        .video-play-btn{
+            width: 120px;
+            height: 120px;
+            background: #101010;
+            border-radius: 50%;
+            margin-left: -40px;
+            i{
+                font-size: 28px;
+                color: var(--n0);
+            }
+        }
+    }
+    @include maxQuery(991){
+        display: grid;
+        justify-content: center;
+        gap: 14px 14px;
+        .working-video-inner{
+            justify-content: center;
+            video{
+                width: 80px;
+                height: 80px;
+             }
+             .video-play-btn{
+                 width: 80px;
+                 height: 80px;
+                 margin-left: -20px;
+                 i{
+                     font-size: 20px;
+                 }
+             }
+        }
+        p{
+            margin: 0 auto;
+        }
+    }
+}
+.progress-categroy-area{
+    .progress-category{
+        background: #F6F5F7;
+        border-radius: 12px;
+        .nice-select{
+            padding: 22px 24px;
+            .current{
+                color: #3E3B53;
+                font-size: 16px;
+            }
+            .list{
+                background: var(--n0);
+                li{
+                    font-size: 16px;
+                }
+            }
+            &::after{
+                right: 24px;
+            }
+        }
+    }
+    .progress-search{
+        background: #F6F5F7;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        input{
+            color: #3E3B53;
+            font-size: 16px;
+            padding: 8px 18px;
+            border: none;
+            outline: none;
+        }
+        button{
+            background: var(--p1);
+            border-radius: 8px;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            i{
+                color: var(--n0);
+            }
+        }
+        ::placeholder{
+            color: #3E3B53;
+        }
+    }
+    @include maxQuery(1199){
+        .progress-category{
+            .nice-select{
+                padding: 17px 24px;
+                .list{
+                    background: var(--n0);
+                    li{
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+// Working Processing
 
