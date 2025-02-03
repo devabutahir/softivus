@@ -1,0 +1,80 @@
+//services section
+.ser-ele1,
+.ser-ele2{
+    position: absolute;
+    &.ser-ele1{
+        top: 90px;
+        left: 90px;
+        animation: upsdown 3s linear infinite;
+    }
+    &.ser-ele2{
+        bottom: 88px;
+        right: 88px;
+        animation: circle 10s linear infinite;
+    }
+    @media screen and (max-width: 1620px) {
+        &.ser-ele1{
+            top: 20px;
+            left: 20px;
+            width: 80px;
+        }
+        &.ser-ele2{
+            bottom: 28px;
+            right: 28px;
+            width: 80px;
+        }
+    }
+    @media screen and (max-width: 1199px) {
+        &.ser-ele1{
+            top: 20px;
+            left: 20px;
+            width: 40px;
+        }
+        &.ser-ele2{
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+        }
+    }
+}
+@keyframes upsdown {
+    50%{
+        transform: scale(1.05);
+    }
+}
+//services section
+
+//services Working section
+.working-service-item{
+    overflow: hidden;
+    transition: all 0.4s;
+    .serial{
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+        color: var(--p1);
+        font-size: 24px;
+        margin-bottom: 100px;
+    }
+    .content{
+        transform: translateY(85px);
+        transition: all 0.4s;
+        .cmn-btn{
+            opacity: 0;
+        }
+    }
+    &:hover{
+        border-color: var(--p1) !important;
+        .content{
+            transform: translateY(0px);
+            .cmn-btn{
+                opacity: 1;
+            }
+        }
+        .serial{
+            background: var(--p1);
+            color: var(--n0);
+        }
+    }
+}
+//services Working section
