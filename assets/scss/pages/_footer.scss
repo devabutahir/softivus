@@ -1,0 +1,225 @@
+//Footer Style
+.footer-section{
+    position: relative;
+    z-index: 1;
+    .container{
+        max-width: 1670px;
+        margin: 0 auto;
+    }
+    .assets-element{
+        position: absolute;
+        top: 80px;
+        left: 80px;
+        z-index: -1;
+        animation: circle 30s linear infinite;
+    }
+    .ser-element{
+        position: absolute;
+        right: 50px;
+        bottom: 50px;
+        animation: updown 3s linear infinite;
+        z-index: -1;
+    }
+    .color-element{
+        position: absolute;
+        top: 20px;
+        right: -270px;
+        animation: updown 4s linear infinite;
+        z-index: -1;
+    }
+    @include maxQuery(1600){
+        .color-element{
+           width: 120px;
+           right: 0;
+        }
+        .assets-element{
+            width: 50px;
+            top: 20px;
+            left: 20px;
+        }
+        .ser-element{
+            right: 8px;
+            bottom: 8px;
+            width: 39px;
+        }
+    }
+}
+.footer-wrapper{
+    border-top: 1px solid #201C38;
+    .bg-added-footer{
+        position: relative;
+        z-index: 1;
+        &::before{
+            position: absolute;
+            right: -20px;
+            width: 200%;
+            height: 100%;
+            content: "";
+            background: #101010;
+            z-index: -1;
+        }
+    }
+    .footer-bottom-social{
+        li{
+            a{
+                i{
+                    transition: all 0.4s;
+                }
+                &:hover{
+                    i{
+                        color: var(--p1);
+                    }
+                }
+            }
+        }
+    }
+    .subscribe-form{
+        background: #191919;
+        input{
+            color: #C0BFC7;
+            font-size: 16px;
+            border: 0;
+            outline: none;
+        }
+        ::placeholder{
+            color: #C0BFC7;
+        }
+        .subs-btn{
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+        }
+    }
+    .footer-bottom-wrapper{
+        border-top: 1px solid #201C38;
+    }
+    .footer-widget-link{
+        li{
+            a{
+                transition: all 0.4s;
+                &:hover{
+                    color: var(--p1);
+                }
+            }
+        }
+    }
+    @include maxQuery(991){
+        .footer-widget-content{
+            max-width: 500px;
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+    @include maxQuery(575){
+        @include minQuery(400){
+            .col-xs-6{
+                width: 44% !important;
+            }
+        }
+    }
+    @include maxQuery(400){
+        h4{
+            text-align: center;
+        }
+        .footer-widget-link{
+            text-align: center;
+        }
+        .drop-box{
+            text-align: center;
+        }
+    }
+}
+.together-content{
+    h2{
+        font-size: 140px;
+        font-weight: 400;
+        line-height: 120%;
+        text-transform: uppercase;
+        color: var(--n0);
+    }
+    p{
+        max-width: 310px;
+    }
+    .request-btn{
+        border: 1px solid #3E3B53;
+        padding: 20px 29px;
+        border-radius: 100px;
+        transition: all 0.5s;
+        .icon{
+            @include box(76);
+            transition: all 0.5s;
+        }
+        &:hover{
+            .icon{
+                transform: rotate(180deg);
+            }
+            border-color: var(--p1);
+            color: var(--n0);
+        }
+    }
+    @include maxQuery(1399){
+        h2{
+            font-size: 80px;
+            font-weight: 400;
+            line-height: 120%;
+        }
+        .request-btn{
+            padding: 14px 24px;
+            .icon{
+                @include box(40);
+                i{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    @include maxQuery(991){
+        h2{
+            font-size: 48px;
+            font-weight: 400;
+            line-height: 120%;
+        }
+        .request-btn{
+            padding: 12px 24px;
+            .icon{
+                @include box(40);
+                i{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    @include maxQuery(767){
+        h2{
+            font-size: 40px;
+            font-weight: 400;
+            line-height: 120%;
+        }
+        .request-btn{
+            padding: 12px 24px;
+            .icon{
+                @include box(40);
+                i{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    @include maxQuery(575){
+        h2{
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 120%;
+        }
+        .request-btn{
+            padding: 12px 24px;
+            .icon{
+                @include box(40);
+                i{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+//Footer Style

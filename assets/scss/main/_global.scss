@@ -37,9 +37,11 @@ li {
 a {
 	text-decoration: none;
 	outline: none;
+	transition: all 0.4s;
 	&:focus, &:hover {
 		text-decoration: none;
 		outline: none;
+		color: var(--p1);
 	}
 	i{
 		font-weight: 400;
@@ -186,6 +188,9 @@ p{
 }
 .pp-clr{
 	color: var(--pp-clr);
+}
+.pra2-clr{
+	color: var(--pra2-clr);
 }
 .n0-clr{
 	color: var(--n0);
@@ -1278,3 +1283,32 @@ text-transform: uppercase;
 	}
 }
 //Custom Imgaes Masking 
+
+
+//img effect
+.image-box-effect{
+	img{
+		transition: all 0.4s;
+	}
+}
+.image-box-effect:hover img:nth-child(1) {
+	transform: translateX(0) scaleX(1);
+	opacity: 1;
+	filter: blur(0);
+  }
+  .image-box-effect:hover img:nth-child(2) {
+	transform: translateX(-50%) scaleX(2);
+	opacity: 0;
+	filter: blur(12px);
+  }
+  .image-box-effect img:nth-child(1) {
+	transform: translateX(50%) scaleX(2);
+	opacity: 0;
+	filter: blur(12px);
+  }
+  .image-box-effect .img {
+	position: absolute;
+	transition: 0.9s;
+  }
+//img effect
+

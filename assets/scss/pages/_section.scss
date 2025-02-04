@@ -160,27 +160,105 @@
         }
     }
 }
-.blog-items{
+.blog-item{
     .thumb{
-        border-radius: 16px;
+        position: relative;
+        border-radius: 8px;
         img{
-            border-radius: 16px;
+            border-radius: 8px;
+        }
+        .holder {
+            position: absolute;
+            display: grid;
+            place-items: center;
+            width: 72px;
+            min-width: 72px;
+            height: 78px;
+            min-height: 78px;
+            background: #fff;
+        }
+        .holder::before, 
+        .holder::after {
+          position: absolute;
+          content: "";
+          width: 1.25em;
+          height: 1.25em;
+          background: transparent;
+        }
+        .three {
+            inset: calc(10% - 2em) 0 0 calc(100% - 4em);
+            border-top-left-radius: 0.75em;
+            border-bottom-left-radius: 0.55em;
+        }
+        .three::before {
+            // inset: 100% 0 0 calc(100% - 1.25em);
+            inset: 7% 0 0 calc(100% - 5.25em);
+            border-top-right-radius: 1.25em;
+            box-shadow: 0.3em -0.3em 0 0.3em #fff;
+        }
+        .three::after {
+            inset: 100% 0 0 calc(100% - 1.25em);
+          border-top-right-radius: 1.25em;
+          box-shadow: 0.3em -0.3em 0 0.3em #fff;
+        }
+        .adjust-btn{
+            opacity: 0;
+            transition: all 0.5s;
+            z-index: 9;
+        }
+        @include maxQuery(1199){
+            .holder{
+                display: none;
+            }   
         }
     }
-    .content{
-        .blog-date{
-            border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+    .arrows{
+       width: 64px;
+       height: 64px;
+       background: var(--p1);
+       border-radius: 8px;
+       position: absolute;
+       z-index: 1;
+       right: 0;
+       top: 0;
+       i{
+        font-size: 24px;
+        color: var(--n0);
+        transform: rotate(-15deg);
+       } 
+    }
+    .contents{
+        h4{
+            a{
+                text-transform: uppercase;
+                transition: all 0.4s;
+            }
         }
     }
     &:hover{
-        .content{
-            h5{
+        .contents{
+            h4{
                 a{
-                    color: var(--p1);
+                    text-transform: uppercase;
+                    transition: all 0.4s;
                     text-decoration: underline;
                 }
             }
         }
+        .thumb{
+            .adjust-btn{
+                opacity: 1;
+            }
+        }
+    }
+    @include maxQuery(991){
+        .arrows{
+            width: 43px;
+            height: 43px;
+            i{
+             font-size: 18px;
+            } 
+         }
     }
 }
 // Blog Section

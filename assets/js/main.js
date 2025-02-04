@@ -645,7 +645,7 @@ $(document).ready(() => {
         scrollTrigger: {
           trigger: splitArea,
           start: 'top 90%',
-          end: 'bottom 60%',
+          end: 'bottom 90%',
           scrub: false,
           markers: false,
         }
