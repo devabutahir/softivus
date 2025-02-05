@@ -1235,3 +1235,85 @@
 }
 // Vusial Section
 
+// Focus Section
+.about-focus-wrap{
+    .textcircle{
+        margin-bottom: -100px;
+        margin-left: auto;
+        background: var(--blackbg);
+        .texta{
+            span{
+                color: var(--n0);
+            }
+        }
+        .circle-arrow{
+            position: absolute;
+            transform: rotate(-17deg);
+            i{
+                color: var(--n0);
+            }
+        }
+        &::before{
+            position: absolute;
+            top: 6px;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            content: "";
+            // background: var(--p1);
+            border-radius: 50%;
+            border-bottom: 10px solid var(--n0);
+        }
+    }
+    @include maxQuery(575){
+        .mimg{
+            height: 350px;
+        }
+    }
+}
+// Focus Section
+
+// About Banner Section
+.about-banner-wrap{
+    .about-banner-cont{
+        max-width: 668px;
+    }
+    .line{
+        width: 1px;
+        background: #C0BFC7;
+        height: 420px;
+    }
+    .about-banner-contleft{
+        max-width: 416px;
+        .brand-customer{
+            img{
+                &:not(:first-child){
+                    margin-left: -25px;
+                }
+            }
+        }
+        .titles{
+            font-size: 190px;
+        }
+        .work-badge{
+            text-wrap: nowrap;
+            transform: rotate(-90deg);
+            display: block;
+        }
+    }
+    @include maxQuery(575){
+        .about-banner-contleft{
+            max-width: 416px;
+            .titles{
+                font-size: 90px;
+            }
+            .work-badge{
+                text-wrap: nowrap;
+                transform: rotate(-0deg);
+                display: block;
+            }
+        }
+    }
+}
+// About Banner Section
+

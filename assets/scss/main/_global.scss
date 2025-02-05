@@ -186,6 +186,12 @@ p{
 .p3-bg{
 	background: var(--p3);
 }
+.s1-clr{
+	color: var(--s1);
+}
+.s2-clr{
+	color: var(--s2);
+}
 .pp-clr{
 	color: var(--pp-clr);
 }
@@ -802,9 +808,9 @@ iframe {
 	animation: textRotation 18s linear infinite;
 }
 @keyframes textRotation {
-to {
-	transform: rotate(360deg);
-}
+	to {
+		transform: rotate(360deg);
+	}
 }
 .texta span {
 position: absolute;
