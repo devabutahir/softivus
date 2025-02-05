@@ -113,50 +113,67 @@
   }
 // Faq Section
 
-// Blog Section
+// Testimoial+ Section
 .testimonial-section{
     background: url(../../assets/images/testimonial/testimonial-bg.png) no-repeat top center;
     background-size: cover;
-    .horizontal-content-wrapper{
-        gap: 30px;
-        @include maxQuery(991){
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-            .thumb{
-                max-width: 100%;
-                img{
-                    width: 100%;
+    .testimonial-wrapper{
+        margin-right: -290px;
+    }
+    .testimonial-item01{
+        background: #1C1C24;
+        border-radius: 12px;
+        .name-area{
+            transform: rotate(-90deg);
+            width: 70px;
+            .cont{
+                span{
+                    color: rgb(255, 255, 255, 0.8);
                 }
             }
         }
-        @include maxQuery(480){
-            grid-template-columns: repeat(1, 1fr);
-            gap: 32px;
-        }
-        .horizontal-item {
-            padding: 100px 0;
-            height: 380px;
-            .blog-items{
-                height: 380px;
-                img{
-                    width: 100%;
-                    height: 100%;
-                }
+        .content{
+            .quote{
+                opacity: 0.2;
             }
-            @include maxQuery(991){
-                padding: 0;
+            h5{
+                max-width: 428px;
+                color: rgb(255, 255, 255, 0.8);            
             }
         }
-        @include maxQuery(1199){
-            gap: 16px;
+        .line{
+            background: rgba(57, 57, 62, 1);
+            width: 1px;
+            height: 320px;
         }
     }
-    .section-title-inner{
-        @include minQuery(992){
-            // margin-bottom: -50px;
-        }
-        @include maxQuery(991){
-            // margin-bottom: 40px;
+    @include maxQuery(1199){
+        .testimonial-item01{
+            background: #1C1C24;
+            border-radius: 12px;
+            .name-area{
+                transform: rotate(-90deg);
+                width: 70px;
+                .cont{
+                    span{
+                        color: rgb(255, 255, 255, 0.8);
+                    }
+                }
+            }
+            .content{
+                .quote{
+                    opacity: 0.2;
+                }
+                h5{
+                    max-width: 428px;
+                    color: rgb(255, 255, 255, 0.8);            
+                }
+            }
+            .line{
+                background: rgba(57, 57, 62, 1);
+                width: 1px;
+                height: 250px;
+            }
         }
     }
 }

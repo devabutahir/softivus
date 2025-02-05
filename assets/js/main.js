@@ -69,51 +69,7 @@ $(document).ready(() => {
     // });
     // gsap.ticker.lagSmoothing(0);
     // ScrollTrigger.update();
-
-
-
-  // lenis matchMedia Init
-  ScrollTrigger.matchMedia({
-   "(min-width: 992px)": function() {
-  const horizontalSections = document.querySelectorAll(".horizontal");
-
-  if (horizontalSections.length) {
-    horizontalSections.forEach(section => {
-      let horizontalItems = gsap.utils.toArray(section.querySelectorAll(".horizontal-item"));
-      
-      let totalWidth = section.scrollWidth; // Get actual width for proper scrolling
-      
-      gsap.set(section, { 
-        width: `${100 * horizontalItems.length}%` // Set the full width dynamically
-      });
-
-      horizontalItems.forEach((item) => {
-        gsap.set(item, { 
-          width: `${100 / horizontalItems.length}%`
-        });
-      });
-
-      let tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: section,
-          pin: true,
-          scrub: 1,  // Lower value = Faster reaction
-          snap: 1 / (horizontalItems.length - 1),
-          end: "+=" + totalWidth // Use actual width for correct scroll distance
-        }
-      });
-
-      // Faster Scrolling Animation
-      tl.to(horizontalItems, {
-        xPercent: -40 * (horizontalItems.length - 1),
-        ease: "none",
-        duration: 1 // Faster movement between sections
-      });
-    });
-  }
-},
-
-  });
+    
   
   // Text Circle 
   const text = document.querySelector(".texta");
@@ -364,11 +320,10 @@ $(document).ready(() => {
     });
 
     // Testimonial Section Version 01 //
-    const servicewrapper = new Swiper(".service-wrapper", {
-      spaceBetween: 0,
+    const testimonialWrapper = new Swiper(".testimonial-wrapper", {
+      spaceBetween: 24,
       speed: 1200,
       loop: true,
-      centeredSlides: true,
       autoplay: {
         delay: 1500,
         disableOnInteraction: false,
@@ -379,14 +334,14 @@ $(document).ready(() => {
       },
       breakpoints: {
         1399: {
-          slidesPerView: 4,
+          slidesPerView: 2,
         },
         991: {
-          slidesPerView: 3,
-          spaceBetween: 10,
+          slidesPerView: 2,
+          spaceBetween: 24,
         },
         600: {
-          slidesPerView: 2,
+          slidesPerView: 16,
           spaceBetween: 10,
         },
         400: {
