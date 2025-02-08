@@ -17,13 +17,13 @@
 ============================================*/
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
 @font-face {
-  font-family: "CustomFont";
-  src: url("../webfonts/Gilroy-Medium.ttf") format("truetype");
+  font-family: "Gilroy";
+  src: url("../../assets/webfonts/Gilroy-Medium.ttf") format("truetype");
 }
 :root {
   /* Font Family */
-  --body-font: "CustomFont", sans-serif;
-  --sub-font: "CustomFont", sans-serif;
+  --body-font: "Gilroy", sans-serif;
+  --sub-font: "Gilroy", sans-serif;
   --heading-font: "Oswald", serif;
   /* Transition */
   --transition: all 0.5s ease-in-out;
@@ -3238,28 +3238,27 @@ iframe {
   width: 220px;
 }
 
-.product-detais-right .product-detais-inner {
-  background: var(--n0);
-  border-radius: 5px;
+.product-detais-right {
+  border-radius: 12px;
+  background: #F2F2F4;
 }
-.product-detais-right .product-detais-inner .product-details-item .tem-info img {
-  width: 40px;
-}
-.product-detais-right .product-detais-inner .product-details-item .tags li a {
-  font-size: 14px;
+.product-detais-right .product-detais-inner .tags li a {
   font-weight: 400;
-  color: var(--n00);
-  background: #f6f6f6;
+  color: #3E3B53;
+  background: #F6F5F7;
   padding: 6px 16px;
-  border-radius: 5px;
+  border-radius: 100px;
   text-align: center;
   display: inline-block;
   transition: all 0.4s;
-  text-transform: capitalize;
+  line-height: 150%;
 }
-.product-detais-right .product-detais-inner .product-details-item .tags li a:hover {
+.product-detais-right .product-detais-inner .tags li a:hover {
   color: var(--n0);
   background: var(--p1);
+}
+.product-detais-right .product-detais-inner .product-details-item .tem-info img {
+  width: 40px;
 }
 
 .use-this-item {

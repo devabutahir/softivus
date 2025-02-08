@@ -2,15 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
 @font-face {
-    font-family: 'CustomFont'; 
-    src: url('../webfonts/Gilroy-Medium.ttf') format('truetype');
+    font-family: 'Gilroy'; 
+    src: url('../../assets/webfonts/Gilroy-Medium.ttf') format('truetype');
+    // src: url('../webfonts/Gilroy-Medium.ttf') format('truetype');
 }
 
 //default root
 :root {
 	/* Font Family */
-	--body-font: "CustomFont", sans-serif;
-	--sub-font:  "CustomFont", sans-serif;
+	--body-font: "Gilroy", sans-serif;
+	--sub-font:  "Gilroy", sans-serif;
 	--heading-font:  "Oswald", serif;
 	/* Transition */
 	--transition: all 0.5s ease-in-out;
