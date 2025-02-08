@@ -360,6 +360,18 @@ li {
   color: var(--n0);
 }
 
+.custom-page-pagination a {
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  font-family: var(--heading-font);
+  transition: all 0.4s;
+}
+.custom-page-pagination a.active, .custom-page-pagination a:hover {
+  background: var(--p1);
+  color: var(--n0);
+}
+
 .pt-120 {
   padding-top: 120px;
 }
@@ -2021,6 +2033,63 @@ iframe {
   transition: 0.9s;
 }
 
+.zoomin-cus {
+  animation: zoomin 4s linear infinite;
+}
+
+.updown-cus {
+  animation: updown 4s linear infinite;
+}
+
+@keyframes updown {
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes zoomin {
+  50% {
+    transform: scale(1.1);
+  }
+}
+.cus-checkbox input {
+  width: 21px;
+  height: 21px;
+  min-width: 21px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cus-checkbox input[type=checkbox],
+.cus-checkbox input[type=radio] {
+  position: relative;
+  border: 1px solid rgba(62, 59, 83, 0.4196078431);
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  color: rgba(62, 59, 83, 0.4196078431);
+  line-height: 1;
+  -webkit-appearance: none;
+}
+.cus-checkbox input[type=checkbox]:before,
+.cus-checkbox input[type=radio]:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f00c";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  padding: 2px;
+  z-index: 2;
+  opacity: 0;
+  color: rgba(62, 59, 83, 0.4196078431);
+}
+.cus-checkbox input[type=checkbox]:checked:before,
+.cus-checkbox input[type=radio]:checked:before {
+  opacity: 1;
+}
+
 .header-section {
   position: absolute;
   top: 0;
@@ -2574,6 +2643,8 @@ iframe {
 .testimonial-section {
   background: url(../../assets/images/testimonial/testimonial-bg.png) no-repeat top center;
   background-size: cover;
+  position: relative;
+  z-index: 1;
 }
 .testimonial-section .testimonial-wrapper {
   margin-right: -290px;
@@ -2602,6 +2673,9 @@ iframe {
   height: 320px;
 }
 @media (max-width: 1199px) {
+  .testimonial-section .testimonial-wrapper {
+    margin-right: 0px;
+  }
   .testimonial-section .testimonial-item01 {
     background: #1C1C24;
     border-radius: 12px;
@@ -2624,6 +2698,22 @@ iframe {
     background: rgb(57, 57, 62);
     width: 1px;
     height: 250px;
+  }
+}
+@media (max-width: 450px) {
+  .testimonial-section .testimonial-item01 {
+    display: grid !important;
+    flex-wrap: wrap;
+  }
+  .testimonial-section .testimonial-item01 .name-area {
+    transform: rotate(0deg);
+    width: 70px;
+  }
+  .testimonial-section .testimonial-item01 .name-area .cont span {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .testimonial-section .line {
+    display: none;
   }
 }
 
@@ -2861,6 +2951,10 @@ iframe {
 .template-items .content h5, .template-items .content a {
   transition: all 0.4s;
 }
+.template-items .content .fs20 {
+  text-transform: uppercase;
+  font-weight: 500;
+}
 .template-items .dropdown .dropdown-menu {
   background: var(--n0);
   border-radius: 5px;
@@ -2953,10 +3047,11 @@ iframe {
   }
 }
 
-.product-side-panel .product-inner {
-  background: var(--n0);
-  border-right: 1px solid var(--cmn-border);
+.product-side-panel {
+  border: 1px solid rgba(0, 0, 0, 0.1);
   padding-right: 20px;
+  background: var(--n0);
+  padding-right: 0;
 }
 .product-side-panel .product-inner .filter-add form {
   display: flex;
@@ -2993,41 +3088,75 @@ iframe {
   padding-left: 4px;
 }
 
+.product-right-pannel {
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(246, 245, 247, 0.5);
+}
 .product-right-pannel .tabItem {
   display: none;
 }
 .product-right-pannel .tabItem.active {
   display: block;
 }
+.product-right-pannel .template-head {
+  border-radius: 12px;
+  border: 1px solid rgba(16, 16, 16, 0.1);
+  padding: 8px;
+  background: rgba(246, 245, 247, 0.5);
+}
+.product-right-pannel .template-head li {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--n0);
+  transition: all 0.5s;
+}
 .product-right-pannel .template-head li button {
-  color: var(--pp-clr) !important;
-  opacity: 0.5;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
 }
 .product-right-pannel .template-head li .filter {
   opacity: 1;
 }
+.product-right-pannel .template-head li.active {
+  background: #F6F5F7;
+}
 .product-right-pannel .template-head li.active button {
-  background: transparent;
+  background: #F6F5F7;
   opacity: 1;
+}
+.product-right-pannel .template-head li.active button svg path {
+  fill: rgba(108, 106, 121, 0.5568627451);
 }
 .product-right-pannel .template-head li.active .filter {
   color: var(--p1) !important;
 }
+.product-right-pannel .grid3-column .template-items {
+  height: 100%;
+}
+.product-right-pannel .grid3-column .template-items .content .fs20 {
+  font-size: 16px !important;
+}
+.product-right-pannel .grid3-column .template-items .content .price {
+  font-size: 20px;
+}
+.product-right-pannel .grid3-column .template-items .content .delprice {
+  font-size: 14px;
+}
 
-@media (max-width: 991px) {
+@media (max-width: 1199px) {
   .subside-barmenu {
     width: 290px;
     height: 100%;
     position: fixed;
     z-index: 99999;
-    background: #000;
+    background: var(--n0);
     left: -320px;
     top: 0;
     transition: all 0.4s;
     overflow-y: scroll;
-  }
-  .subside-barmenu .product-inner {
-    padding: 24px;
   }
   .subside-barmenu .remove-click:hover {
     cursor: pointer;
@@ -3042,9 +3171,9 @@ iframe {
 }
 
 .product-icon {
-  width: 44px;
-  height: 44px;
-  border: 1px solid var(--cmn-border);
+  width: 58px;
+  height: 58px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .product-icon svg {
   width: 24px;
@@ -3052,6 +3181,9 @@ iframe {
 }
 .product-icon svg path {
   stroke: var(--pp-clr);
+}
+.product-icon:hover {
+  cursor: pointer;
 }
 
 .custom-bgadding {
@@ -3967,6 +4099,25 @@ iframe {
   background: var(--n0);
   outline: none;
   border: unset;
+}
+
+.testimonial-btn-area button {
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
+  border: 1px solid var(--n0);
+  transition: all 0.5s;
+}
+.testimonial-btn-area button:hover {
+  background: var(--p1);
+  border-color: var(--p1);
+}
+@media (max-width: 1399px) {
+  .testimonial-btn-area button {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+  }
 }
 
 .ser-ele1,

@@ -288,6 +288,18 @@ li {
 		}
 	}
 }
+.custom-page-pagination{
+	a{
+		@include box(40);
+		font-family: var(--heading-font);
+		transition: all 0.4s;
+		&.active,
+		&:hover{
+			background: var(--p1);
+			color: var(--n0);
+		}
+	}
+}
 
 .pt-120 {
 	padding-top: 120px;

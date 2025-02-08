@@ -324,10 +324,10 @@ $(document).ready(() => {
       spaceBetween: 24,
       speed: 1200,
       loop: true,
-      autoplay: {
-        delay: 1500,
-        disableOnInteraction: false,
-      },
+      // autoplay: {
+      //   delay: 1500,
+      //   disableOnInteraction: false,
+      // },
       navigation: {
         nextEl: ".swiper-button-prevteam",
         prevEl: ".swiper-button-nextteam",
@@ -340,11 +340,15 @@ $(document).ready(() => {
           slidesPerView: 2,
           spaceBetween: 24,
         },
-        600: {
-          slidesPerView: 16,
+        810: {
+          slidesPerView: 2,
           spaceBetween: 10,
         },
-        400: {
+        600: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        450: {
           slidesPerView: 1,
           spaceBetween: 5,
         },

@@ -117,6 +117,8 @@
 .testimonial-section{
     background: url(../../assets/images/testimonial/testimonial-bg.png) no-repeat top center;
     background-size: cover;
+    position: relative;
+    z-index: 1;
     .testimonial-wrapper{
         margin-right: -290px;
     }
@@ -148,6 +150,9 @@
         }
     }
     @include maxQuery(1199){
+        .testimonial-wrapper{
+            margin-right: -0px;
+        }
         .testimonial-item01{
             background: #1C1C24;
             border-radius: 12px;
@@ -174,6 +179,24 @@
                 width: 1px;
                 height: 250px;
             }
+        }
+    }
+    @include maxQuery(450){
+        .testimonial-item01{
+            display: grid !important;
+            flex-wrap: wrap;
+            .name-area{
+                transform: rotate(-0deg);
+                width: 70px;
+                .cont{
+                    span{
+                        color: rgb(255, 255, 255, 0.8);
+                    }
+                }
+            }
+        }
+        .line{
+            display: none;
         }
     }
 }
@@ -427,6 +450,10 @@
         h5,a{
             transition: all 0.4s;
         }
+        .fs20{
+            text-transform: uppercase;
+            font-weight: 500;
+        }
     }
     .dropdown{
         .dropdown-menu{
@@ -540,10 +567,10 @@
 
 // Product Section
 .product-side-panel{
+    border: 1px solid rgba(0, 0, 0, 0.10);                padding-right: 20px;
+    background: var(--n0);
+    padding-right: 0;
     .product-inner{
-        background: var(--n0);
-        border-right: 1px solid var(--cmn-border);
-        padding-right: 20px;
         .filter-add{
            form{
             display: flex;
@@ -586,6 +613,9 @@
     }
 }
 .product-right-pannel{
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background: rgba(246, 245, 247, 0.50);
     .tabItem{
         display: none;
         &.active{
@@ -593,17 +623,33 @@
         }
     } 
     .template-head{
+        border-radius: 12px;
+        border: 1px solid rgba(16, 16, 16, 0.10);
+        padding: 8px;
+        background: rgba(246, 245, 247, 0.50);
         li{
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: var(--n0);
+            transition: all 0.5s;
             button{
-                color: var(--pp-clr) !important;
-                opacity: 0.5;
+                width: 40px;
+                height: 40px;
+                border-radius: 8px;
             }
             .filter{
                 opacity: 1;
             }
             &.active{
+                background: #F6F5F7;
                 button{
-                    background: transparent;
+                    background: #F6F5F7;
+                    svg{
+                        path{
+                            fill: #6c6a798e;
+                        }
+                    }
                     opacity: 1;
                 }
                 .filter{
@@ -612,22 +658,35 @@
             }
         }
     }
+    .grid3-column{
+        .template-items{
+            height: 100%;
+            .content{
+              .fs20{
+                font-size: 16px !important;
+              } 
+              .price {
+                font-size: 20px;
+              } 
+              .delprice{
+                font-size: 14px;
+              }
+            }
+        }
+    }
 }
 
 .subside-barmenu {
-	@include maxQuery(991){
+	@include maxQuery(1199){
         width: 290px;
         height: 100%;
         position: fixed;
         z-index: 99999;
-        background: #000;
+        background: var(--n0);
         left: -320px;
         top: 0;
         transition: all 0.4s;
         overflow-y: scroll;
-        .product-inner{
-            padding: 24px;
-        }
 	.remove-click {
 		&:hover {
 			cursor: pointer;
@@ -643,15 +702,18 @@
     }
 }
 .product-icon{
-    width: 44px;
-    height: 44px;
-    border: 1px solid var(--cmn-border);
+    width: 58px;
+    height: 58px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     svg{
         width: 24px;
         height: 24px;
         path{
             stroke: var(--pp-clr); 
         }
+    }
+    &:hover{
+        cursor: pointer;
     }
 }
 // Product Section
