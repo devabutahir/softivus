@@ -3855,6 +3855,61 @@ iframe {
   z-index: -1;
 }
 
+.blog-heading-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 0;
+}
+.blog-heading-info div {
+  width: 50%;
+}
+@media (max-width: 1199px) {
+  .blog-heading-info {
+    gap: 16px 0;
+  }
+}
+@media (max-width: 767px) {
+  .blog-heading-info {
+    gap: 16px 0;
+  }
+  .blog-heading-info div {
+    width: 33.3333333333%;
+  }
+}
+@media (max-width: 480px) {
+  .blog-heading-info {
+    gap: 12px 18px;
+  }
+  .blog-heading-info div {
+    width: initial;
+  }
+}
+
+.blog-details-share {
+  position: sticky;
+  top: 40px;
+}
+.blog-details-share .custom-social-boxes {
+  width: 85px;
+}
+.blog-details-share .custom-social-boxes li a {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition: all 0.4s;
+}
+.blog-details-share .custom-social-boxes li a i {
+  color: var(--n900);
+  transition: all 0.4s;
+  font-size: 19px;
+}
+.blog-details-share .custom-social-boxes li a:hover {
+  background: var(--p1);
+}
+.blog-details-share .custom-social-boxes li a:hover i {
+  color: var(--n0);
+}
+
 .hero-section {
   background: #04001F;
   padding: 170px 0 120px;
@@ -4167,6 +4222,15 @@ iframe {
   background: var(--n0);
   outline: none;
   border: unset;
+}
+
+.leave-grp input, .leave-grp textarea {
+  width: 100%;
+  border: unset;
+  border-radius: 0;
+  border-bottom: 1px solid rgba(192, 191, 199, 0.5);
+  color: var(--pp-clr);
+  padding: 0 0 14px 0;
 }
 
 .testimonial-btn-area button {

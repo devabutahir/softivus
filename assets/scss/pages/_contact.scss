@@ -21,3 +21,15 @@
         border: unset;
     }
 }
+
+//leave- Reply
+.leave-grp{
+    input,textarea{
+        width: 100%;
+        border: unset;
+        border-radius: 0;
+        border-bottom: 1px solid rgba(192, 191, 199, 0.50);
+        color: var(--pp-clr);
+        padding: 0 0 14px 0;
+     }
+}
