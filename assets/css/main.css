@@ -3909,6 +3909,34 @@ iframe {
 .blog-details-share .custom-social-boxes li a:hover i {
   color: var(--n0);
 }
+@media (max-width: 767px) {
+  .blog-details-share {
+    top: 30px;
+  }
+  .blog-details-share .custom-social-boxes {
+    width: initial;
+  }
+}
+
+.blog-details-content-wrapper .custom-social-boxes li a {
+  width: 48px;
+  min-width: 48px;
+  height: 48px;
+  background: var(--n0);
+  border: 1px solid rgba(62, 59, 83, 0.2);
+  border-radius: 50%;
+  transition: all 0.4s;
+}
+.blog-details-content-wrapper .custom-social-boxes li a i {
+  color: var(--n900);
+  transition: all 0.4s;
+}
+.blog-details-content-wrapper .custom-social-boxes li a:hover {
+  background: var(--p2);
+}
+.blog-details-content-wrapper .custom-social-boxes li a:hover i {
+  color: var(--n0);
+}
 
 .hero-section {
   background: #04001F;

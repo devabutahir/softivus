@@ -1509,5 +1509,34 @@
             }
         }
     }
+    @include maxQuery(767){
+        top: 30px;
+        .custom-social-boxes{
+            width: initial;
+        }
+    }
+}
+.blog-details-content-wrapper{
+    .custom-social-boxes{
+        li{
+            a{
+                @include box(48);
+                background: var(--n0);
+                border: 1px solid rgba(62, 59, 83, 0.20);
+                border-radius: 50%;
+                transition: all 0.4s;
+                i{
+                    color: var(--n900);
+                    transition: all 0.4s;
+                }
+                &:hover{
+                    background: var(--p2);
+                    i{
+                        color: var(--n0);
+                    }
+                }
+            }
+        }
+    }
 }
 //Blog Details Section
