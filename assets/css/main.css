@@ -3483,6 +3483,59 @@ iframe {
   }
 }
 
+.progress-category {
+  background: #F6F5F7;
+  border-radius: 12px;
+}
+.progress-category .nice-select {
+  padding: 22px 24px;
+}
+.progress-category .nice-select .current {
+  color: #3E3B53;
+  font-size: 16px;
+}
+.progress-category .nice-select .list {
+  background: var(--n0);
+}
+.progress-category .nice-select .list li {
+  font-size: 16px;
+}
+.progress-category .nice-select::after {
+  right: 24px;
+}
+
+.progress-search {
+  background: #F6F5F7;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+}
+.progress-search input {
+  color: #3E3B53;
+  font-size: 16px;
+  padding: 8px 18px;
+  border: none;
+  outline: none;
+}
+.progress-search button {
+  background: var(--p1);
+  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.progress-search button i {
+  color: var(--n0);
+}
+.progress-search ::-moz-placeholder {
+  color: #3E3B53;
+}
+.progress-search ::placeholder {
+  color: #3E3B53;
+}
+
 .single-service-item {
   border-bottom: 3px solid var(--blackbg);
   border-radius: 8px;
@@ -3998,6 +4051,122 @@ iframe {
 }
 .contact-form .nice-select ::placeholder, .contact-form input ::placeholder, .contact-form textarea ::placeholder {
   color: #3E3B53;
+}
+
+.careers-header-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+.careers-header-wrapper .career-header-item {
+  width: 260px;
+  border-radius: 0;
+}
+.careers-header-wrapper .career-header-item input .current {
+  color: #3E3B53;
+}
+.careers-header-wrapper .career-header-item ::-moz-placeholder {
+  color: #3E3B53;
+}
+.careers-header-wrapper .career-header-item ::placeholder {
+  color: #3E3B53;
+}
+.careers-header-wrapper .career-header-item .nice-select {
+  height: 55px;
+  border-radius: 0;
+}
+.careers-header-wrapper .career-header-item .nice-select .current {
+  color: #3E3B53;
+}
+.careers-header-wrapper .progress-search {
+  height: 55px;
+}
+.careers-header-wrapper .progress-search input {
+  padding-left: 10px;
+}
+.careers-header-wrapper .progress-search button {
+  background: transparent;
+}
+.careers-header-wrapper .progress-search button i {
+  color: var(--n900);
+}
+@media (max-width: 991px) {
+  .careers-header-wrapper {
+    flex-wrap: wrap;
+  }
+}
+
+.career-items {
+  transition: all 0.5s !important;
+}
+.career-items h5 a {
+  transition: all 0.4s;
+}
+.career-items div {
+  transition: all 0.4s;
+}
+.career-items:hover {
+  background: var(--p1);
+}
+.career-items:hover h5 a {
+  color: var(--n0);
+}
+.career-items:hover div {
+  color: var(--n0);
+}
+.career-items:hover .arrow-right {
+  color: var(--n0);
+}
+.career-items:hover .arrow-right i {
+  color: var(--n0);
+}
+
+.list-initial {
+  list-style: initial;
+}
+
+.apply-grp input {
+  width: 100%;
+  background: #F6F5F7;
+  border-radius: 0;
+  height: 52px;
+  outline: none;
+  border: unset;
+}
+.apply-grp textarea {
+  width: 100%;
+  background: #F6F5F7;
+  border-radius: 0;
+  outline: none;
+  border: unset;
+}
+.apply-grp .nice-select {
+  width: 85px;
+}
+.apply-grp .nice-select .list {
+  width: 80px;
+  background: var(--n0);
+}
+.apply-grp .nice-select::after {
+  width: 8px;
+  height: 8px;
+}
+
+.drop-file-wrap input:not([type=image i], [type=range i], [type=checkbox i], [type=radio i]) {
+  overflow-clip-margin: 0px !important;
+  overflow: clip !important;
+  opacity: 0;
+}
+.drop-file-wrap .drop-file-area {
+  border: 1px dashed #C0BFC7;
+  position: relative;
+}
+.drop-file-wrap .drop-file-area input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .hero-section {
