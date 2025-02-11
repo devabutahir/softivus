@@ -1540,3 +1540,73 @@
     }
 }
 //Blog Details Section
+
+//map-area-section
+.map-area-section{
+    .map-softivus-info{
+        max-width: 410px;
+        position: absolute;
+        left: 16%;
+        top: 0;
+        .call-main{
+            a{
+                &:hover{
+                    color: var(--n0);
+                }
+            }
+        }
+    }
+    iframe{
+        width: 100%;
+        height: 640px;
+    }
+    @include maxQuery(991){
+        .map-softivus-info{
+            left: 0;
+        }
+        iframe{
+            width: 100%;
+            height: 550px;
+        }
+    }
+}
+//map-area-section
+
+//Contact-section
+.contact-lect-content{
+    .line{
+        height: 220px;
+        width: 1px;
+        background: #C0BFC7;
+        margin: 0 auto;
+    }
+    .nice-select{
+        width: 100%;
+        padding: 16px 8px;
+        border: unset;
+        border-bottom: 1px solid rgba(192, 191, 199, 0.60);
+        color: #3E3B53;
+        font-size: 18px;
+        font-weight: 400;
+        ::placeholder{
+            color: #3E3B53;
+        }
+    }
+
+}
+.contact-form{
+    .nice-select,input,textarea{
+        width: 100%;
+        padding: 16px 8px;
+        border: unset;
+        border-bottom: 1px solid rgba(192, 191, 199, 0.60);
+        color: #3E3B53;
+        font-size: 18px;
+        font-weight: 400;
+        border-radius: 0;
+        ::placeholder{
+            color: #3E3B53;
+        }
+    }
+}
+//Contact-section
