@@ -5,7 +5,7 @@ html {
 	//Body Default Style
 body {
 	font-family: var(--body-font);
-	background: var(--s4);
+	background: var(--n0);
 	color: var(--n0);
 	font-size: 18px;
 	line-height: 150%;
@@ -68,6 +68,7 @@ h6 > a,
 	line-height: 128%;
 	display: block;
 	transition: var(--transition);
+	font-weight: 500 !important;
 	span{
 		font-size: inherit;
 		color: inherit;
@@ -191,6 +192,15 @@ p{
 }
 .s2-clr{
 	color: var(--s2);
+}
+.s3-clr{
+	color: var(--s3);
+}
+.s4-clr{
+	color: var(--s4);
+}
+.s4-bg10{
+	background: rgb(176, 33, 212, 10%);
 }
 .pp-clr{
 	color: var(--pp-clr);

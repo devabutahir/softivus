@@ -9,6 +9,19 @@
         width: 72px;
         height: 72px;
     }
+    &.hireme-items{
+        border-bottom: 4px solid var(--bg3) !important;
+        .icon{
+            @include box(80);
+        }
+        &:hover{
+            background: rgb(39, 179, 70, 10%);
+            border-color: var(--p1) !important;
+            .purchase{
+                color: var(--n0);
+            }
+        }
+    }
     &:hover{
         transform: translateY(-7px);
     }
@@ -1780,3 +1793,83 @@
     }
 }
 //careers-header-wrapper
+
+//reguest-grp
+.reguest-grp{
+    input,textarea{
+        width: 100%;
+        padding: 14px 16px;
+        background: var(--bg3);
+        border-radius: 8px;
+        color: #3E3B53;
+        font-size: 16px;
+        border: unset;
+    }
+    ::placeholder{    
+        color: #3e3b5382;
+    }
+}
+//reguest-grp
+
+//signup-signin-section
+.signup-signin-section{
+    height: 100vh;
+    overflow-y: scroll;
+    .authentication-content-wrap{        
+        padding: 24px;
+        &.sign-wrap{
+            height: 100%;
+            height: 100vh;
+        }
+        .boxes{
+            width: 526px;
+        }
+        .signup-with{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            color: var(--pp-clr);
+            text-align: center;
+            &::before,
+            &::after{
+                position: absolute;
+                content: "";
+                height: 1px;
+                background: #C0BFC7;
+            }
+            &::before{
+                right: 0;
+                width: 30%;
+            }
+            &::after{
+                left: 0;
+                width: 30%;
+            }
+        }
+        .reguest-grp{
+            input,textarea{
+                background: var(--n0);
+                border: 1px solid rgba(192, 191, 199, 0.30);
+                border-radius: 60px;
+                outline: none;
+            }
+            ::placeholder{    
+                color: #3e3b5382;
+            }
+        }
+    }
+    .authentication-thumb{
+        padding: 24px;
+        height: 100%;
+        .thumb{
+            max-width: 730px;
+            margin: 0 auto;
+            img{
+                width: 100%;
+            }
+        }
+    }
+}
+//signup-signin-section

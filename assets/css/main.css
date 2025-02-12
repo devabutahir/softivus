@@ -19,6 +19,12 @@
 @font-face {
   font-family: "Gilroy";
   src: url("../../assets/webfonts/Gilroy-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("../../assets/webfonts/Gilroy-Regular.ttf") format("truetype");
+  font-weight: 400;
 }
 :root {
   /* Font Family */
@@ -34,6 +40,8 @@
   --p2: #5034FA;
   --s1: #FFAB00;
   --s2: #B3FC6A;
+  --s3: #B71D18;
+  --s4: #B021D4;
   --p100: rgb(119, 75, 251);
   --p200: rgb(251, 70, 70);
   --p300: rgb(20, 191, 255);
@@ -649,7 +657,7 @@ html {
 
 body {
   font-family: var(--body-font);
-  background: var(--s4);
+  background: var(--n0);
   color: var(--n0);
   font-size: 18px;
   line-height: 150%;
@@ -717,6 +725,7 @@ h6 > a,
   line-height: 128%;
   display: block;
   transition: var(--transition);
+  font-weight: 500 !important;
 }
 h1 span,
 h1 > a span,
@@ -880,6 +889,18 @@ p {
 
 .s2-clr {
   color: var(--s2);
+}
+
+.s3-clr {
+  color: var(--s3);
+}
+
+.s4-clr {
+  color: var(--s4);
+}
+
+.s4-bg10 {
+  background: rgba(176, 33, 212, 0.1);
 }
 
 .pp-clr {
@@ -2545,6 +2566,21 @@ iframe {
   width: 72px;
   height: 72px;
 }
+.choose-items.hireme-items {
+  border-bottom: 4px solid var(--bg3) !important;
+}
+.choose-items.hireme-items .icon {
+  width: 80px;
+  min-width: 80px;
+  height: 80px;
+}
+.choose-items.hireme-items:hover {
+  background: rgba(39, 179, 70, 0.1);
+  border-color: var(--p1) !important;
+}
+.choose-items.hireme-items:hover .purchase {
+  color: var(--n0);
+}
 .choose-items:hover {
   transform: translateY(-7px);
 }
@@ -4167,6 +4203,83 @@ iframe {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.reguest-grp input, .reguest-grp textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--bg3);
+  border-radius: 8px;
+  color: #3E3B53;
+  font-size: 16px;
+  border: unset;
+}
+.reguest-grp ::-moz-placeholder {
+  color: rgba(62, 59, 83, 0.5098039216);
+}
+.reguest-grp ::placeholder {
+  color: rgba(62, 59, 83, 0.5098039216);
+}
+
+.signup-signin-section {
+  height: 100vh;
+  overflow-y: scroll;
+}
+.signup-signin-section .authentication-content-wrap {
+  padding: 24px;
+}
+.signup-signin-section .authentication-content-wrap.sign-wrap {
+  height: 100%;
+  height: 100vh;
+}
+.signup-signin-section .authentication-content-wrap .boxes {
+  width: 526px;
+}
+.signup-signin-section .authentication-content-wrap .signup-with {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  color: var(--pp-clr);
+  text-align: center;
+}
+.signup-signin-section .authentication-content-wrap .signup-with::before, .signup-signin-section .authentication-content-wrap .signup-with::after {
+  position: absolute;
+  content: "";
+  height: 1px;
+  background: #C0BFC7;
+}
+.signup-signin-section .authentication-content-wrap .signup-with::before {
+  right: 0;
+  width: 30%;
+}
+.signup-signin-section .authentication-content-wrap .signup-with::after {
+  left: 0;
+  width: 30%;
+}
+.signup-signin-section .authentication-content-wrap .reguest-grp input, .signup-signin-section .authentication-content-wrap .reguest-grp textarea {
+  background: var(--n0);
+  border: 1px solid rgba(192, 191, 199, 0.3);
+  border-radius: 60px;
+  outline: none;
+}
+.signup-signin-section .authentication-content-wrap .reguest-grp ::-moz-placeholder {
+  color: rgba(62, 59, 83, 0.5098039216);
+}
+.signup-signin-section .authentication-content-wrap .reguest-grp ::placeholder {
+  color: rgba(62, 59, 83, 0.5098039216);
+}
+.signup-signin-section .authentication-thumb {
+  padding: 24px;
+  height: 100%;
+}
+.signup-signin-section .authentication-thumb .thumb {
+  max-width: 730px;
+  margin: 0 auto;
+}
+.signup-signin-section .authentication-thumb .thumb img {
+  width: 100%;
 }
 
 .hero-section {

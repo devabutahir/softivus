@@ -5,7 +5,15 @@
     font-family: 'Gilroy'; 
     src: url('../../assets/webfonts/Gilroy-Medium.ttf') format('truetype');
     // src: url('../webfonts/Gilroy-Medium.ttf') format('truetype');
+	font-weight: 500;
 }
+@font-face {
+    font-family: 'Gilroy'; 
+    src: url('../../assets/webfonts/Gilroy-Regular.ttf') format('truetype');
+    // src: url('../webfonts/Gilroy-Medium.ttf') format('truetype');
+	font-weight: 400;
+}
+
 
 //default root
 :root {
@@ -23,6 +31,8 @@
 	--p2: #5034FA;
 	--s1: #FFAB00;
 	--s2: #B3FC6A;
+	--s3: #B71D18;
+	--s4: #B021D4;
 	--p100: rgb(119, 75, 251);
 	--p200: rgb(251, 70, 70);
 	--p300: rgb(20, 191, 255);
