@@ -358,6 +358,47 @@ $(document).ready(() => {
         },
       },
     });
+
+    // Testimonial Section Version 01 //
+    const latestClientWrapper = new Swiper(".latest-client-wrapperm", {
+      spaceBetween: 20,
+      speed: 1200,
+      loop: true,
+      autoplay: {
+        delay: 1500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.pagination-client',
+        clickable: true,
+      },
+      breakpoints: {
+        1399: {
+          slidesPerView: 2,
+        },
+        991: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        810: {
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+        600: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        450: {
+          slidesPerView: 1,
+          spaceBetween: 5,
+        },
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 5,
+        },
+      },
+    });
+
       // Sponsor Slider //
     const sponsorwrapper = new Swiper(".template-responsive", {
       spaceBetween: 16,
@@ -417,7 +458,7 @@ $(document).ready(() => {
       },
     });
     // Testimonial Section Version 01 //
-      const testimonialwrapv2 = new Swiper(".testimonial-wrapv2", {
+    const testimonialwrapv2 = new Swiper(".testimonial-wrapv2", {
       spaceBetween: 0,
       speed: 1200,
       loop: true,

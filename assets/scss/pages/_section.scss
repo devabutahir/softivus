@@ -1873,3 +1873,59 @@
     }
 }
 //signup-signin-section
+
+//Website section
+.Checkout-section{
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    &::before{
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 50%;
+        content: "";
+        background: rgba(246, 245, 247, 0.50);
+        z-index: -1;
+    }
+    .checkout-left-content{
+        height: 100vh;
+        .boxes{
+            max-width: 526px;
+        }
+    }
+    .checkout-right-content{
+        height: 100vh;
+        .box{
+            width: 560px;
+        }
+    }
+    .website-package-right{
+        position: sticky;
+        top: 40px;
+        .icon-help{
+            width: 60px;
+            height: 60px;
+        }
+    }
+    @include maxQuery(991){
+        height: initial;
+        &::before{
+            width: 100%;
+        }
+        .checkout-left-content{
+            height: initial;
+            .boxes{
+                max-width: 100%;
+            }
+        }
+        .checkout-right-content{
+            height: initial;
+            .box{
+                width: 100%;
+            }
+        }
+    }
+}
+//Website section

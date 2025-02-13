@@ -20,3 +20,19 @@
     }
 }
 //Testimonila Style
+
+
+//Custom Bullet
+.pagination-client{
+    .swiper-pagination-bullet{
+        opacity: 1;
+        width: 12px;
+        height: 12px;
+        background: rgb(31, 178, 84, 0.3);
+        &.swiper-pagination-bullet-active{
+            width: 60px;
+            border-radius: 100px;
+            background: var(--p1);
+        }
+    }
+}
