@@ -42,6 +42,7 @@
   --s2: #B3FC6A;
   --s3: #B71D18;
   --s4: #B021D4;
+  --s5: #FB5C27;
   --p100: rgb(119, 75, 251);
   --p200: rgb(251, 70, 70);
   --p300: rgb(20, 191, 255);
@@ -887,6 +888,14 @@ p {
   color: var(--s1);
 }
 
+.s1-bg {
+  background: var(--s1);
+}
+
+.s2-bg {
+  background: var(--s2);
+}
+
 .s2-clr {
   color: var(--s2);
 }
@@ -899,8 +908,16 @@ p {
   color: var(--s4);
 }
 
+.s5-deepbg {
+  background: #44B931;
+}
+
 .s4-bg10 {
   background: rgba(176, 33, 212, 0.1);
+}
+
+.s5-bg {
+  background: var(--s5);
 }
 
 .pp-clr {
@@ -4335,6 +4352,52 @@ iframe {
   }
   .Checkout-section .checkout-right-content .box {
     width: 100%;
+  }
+}
+
+.help-form-boxes {
+  max-width: 786px;
+  margin: 0 auto;
+}
+.help-form-boxes form {
+  border: 1px solid #3E3B53;
+  border-radius: 100px;
+  background: var(--n900);
+}
+.help-form-boxes form button {
+  background: var(--p2);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+}
+.help-form-boxes form input {
+  color: #C0BFC7;
+  font-size: 18px;
+  font-weight: 500;
+}
+.help-form-boxes form ::-moz-placeholder {
+  color: #C0BFC7;
+}
+.help-form-boxes form ::placeholder {
+  color: #C0BFC7;
+}
+
+.our-helping-wrap {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+}
+@media (max-width: 991px) {
+  .our-helping-wrap {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+}
+@media (max-width: 575px) {
+  .our-helping-wrap {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
   }
 }
 

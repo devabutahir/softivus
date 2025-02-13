@@ -1929,3 +1929,43 @@
     }
 }
 //Website section
+
+//Support section
+.help-form-boxes{
+    max-width: 786px;
+    margin: 0 auto;
+    form{
+        border: 1px solid #3E3B53;
+        border-radius: 100px;
+        background: var(--n900);
+        button{
+            background: var(--p2);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+        }
+        input{
+            color: #C0BFC7;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        ::placeholder{
+            color: #C0BFC7;
+        }
+    }
+}
+.our-helping-wrap{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+    @include maxQuery(991){
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+    @include maxQuery(575){
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+}
+//Support section

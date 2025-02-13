@@ -190,6 +190,12 @@ p{
 .s1-clr{
 	color: var(--s1);
 }
+.s1-bg{
+	background: var(--s1);
+}
+.s2-bg{
+	background: var(--s2);
+}
 .s2-clr{
 	color: var(--s2);
 }
@@ -199,8 +205,14 @@ p{
 .s4-clr{
 	color: var(--s4);
 }
+.s5-deepbg{
+	background: #44B931;
+}
 .s4-bg10{
 	background: rgb(176, 33, 212, 10%);
+}
+.s5-bg{
+	background: var(--s5);
 }
 .pp-clr{
 	color: var(--pp-clr);
