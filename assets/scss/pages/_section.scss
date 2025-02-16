@@ -1969,3 +1969,57 @@
     }
 }
 //Support section
+
+//Shopping Cart Section
+.shopping-cart-section{
+    height: 100vh;
+    @include minQuery(991){
+        height: initial;
+    }
+}
+.shopping-left-wrapper{
+    // Custom Dropdown 
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 0px;
+        background: #ebebeb;
+    }
+    ::-webkit-scrollbar-button,
+    ::-webkit-scrollbar-thumb {
+        width: 1px;
+        background: var(--p1);
+        height: 10px;
+    }
+    @include minQuery(991){
+        max-width: 800px;
+        margin: 0 auto;
+        .boxes{
+            overflow-y: scroll;
+            height: 82vh;
+            padding-right: 40px;
+        }
+    }
+}
+.shopping-right-wrapper{
+    // Custom Dropdown 
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 0px;
+        background: #ebebeb;
+    }
+    ::-webkit-scrollbar-button,
+    ::-webkit-scrollbar-thumb {
+        width: 1px;
+        background: var(--p1);
+        height: 10px;
+    }
+    @include minQuery(991){
+        max-width: 870px;
+        .boxes{
+            overflow-y: scroll;
+            height: 82vh;
+            padding-right: 40px;
+        }
+    }
+}
+//Shopping Cart Section
