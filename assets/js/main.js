@@ -253,15 +253,13 @@ $(document).ready(() => {
         }
     });
     //--== Magnigiq Popup Initial ==--//
-    
-    //--== Custom Navbar Header ==--//
-    $('.navbar-toggle-btn').on('click', function () {
-      $('.navbar-toggle-item').slideToggle(300);
+    $('.navbar-toggle-btn, .cus-header-overlay').on('click', function () {
+      $('.navbar-toggle-item, .cus-header-overlay2').toggleClass('active'); // Only adds/removes 'active' class
       $('body').toggleClass('overflow-hidden');
       $(this).toggleClass('open');
-    });
+    });    
     $('.menu-item, .active-button').on('click', function () {
-      $(this).siblings("ul").slideToggle(300);
+      $(this).siblings("ul").slideToggle(300); // Keeps toggle functionality for menu items
     });
     //--== Custom Navbar Header ==--//
   

@@ -1973,11 +1973,25 @@
 //Shopping Cart Section
 .shopping-cart-section{
     height: 100vh;
-    @include minQuery(991){
+    .back-btn{
+        background: var(--p1);
+        border-radius: 5px;
+        padding: 11px 20px;
+        gap: 8px;
+        color: var(--n0);
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-size: 17px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+    @include maxQuery(991){
         height: initial;
     }
 }
 .shopping-left-wrapper{
+    height: 100vh;
     // Custom Dropdown 
     ::-webkit-scrollbar {
         width: 6px;
@@ -1989,6 +2003,11 @@
         width: 1px;
         background: var(--p1);
         height: 10px;
+    }
+    @include maxQuery(991){
+        height: initial !important;
+        padding-top: 24px;
+        padding-bottom: 24px;
     }
     @include minQuery(991){
         max-width: 800px;
@@ -2001,6 +2020,7 @@
     }
 }
 .shopping-right-wrapper{
+    height: 100vh;
     // Custom Dropdown 
     ::-webkit-scrollbar {
         width: 6px;
@@ -2013,8 +2033,17 @@
         background: var(--p1);
         height: 10px;
     }
+    @include maxQuery(991){
+        height: initial !important;
+        .checkout-right-content{
+            width: 100%;
+            padding-bottom: 30px;
+        }
+    }
     @include minQuery(991){
-        max-width: 870px;
+        .checkout-right-content{
+            width: 800px;
+        }
         .boxes{
             overflow-y: scroll;
             height: 82vh;
