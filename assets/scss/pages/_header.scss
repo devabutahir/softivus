@@ -1,4 +1,19 @@
 
+.discount-popup{
+    position: relative;
+    .close-btnoffer{
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+   @include maxQuery(575){
+    p{
+        max-width: 200px;
+    }
+   }
+}
+
 .cus-header-overlay2{
     display: none;
     @include maxQuery(991){
@@ -12,7 +27,7 @@
         display: block;
         background: rgba(0, 0, 0, 0.718);
         &.active{
-            width: 100%;
+            width: calc(100% - 320px);
         }
     }
 }
@@ -464,7 +479,7 @@
 
 // sticky header 
 .header-fixed{
-    position: fixed;
+    position: fixed !important;
     top: 0px;
     z-index: 999;
     width: 100%;

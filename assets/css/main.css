@@ -2157,6 +2157,21 @@ iframe {
   opacity: 1;
 }
 
+.discount-popup {
+  position: relative;
+}
+.discount-popup .close-btnoffer {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media (max-width: 575px) {
+  .discount-popup p {
+    max-width: 200px;
+  }
+}
+
 .cus-header-overlay2 {
   display: none;
 }
@@ -2173,7 +2188,7 @@ iframe {
     background: rgba(0, 0, 0, 0.718);
   }
   .cus-header-overlay2.active {
-    width: 100%;
+    width: calc(100% - 320px);
   }
 }
 
@@ -2609,7 +2624,7 @@ iframe {
 }
 
 .header-fixed {
-  position: fixed;
+  position: fixed !important;
   top: 0px;
   z-index: 999;
   width: 100%;
