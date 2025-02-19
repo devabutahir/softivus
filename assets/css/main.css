@@ -2166,6 +2166,9 @@ iframe {
   top: 50%;
   transform: translateY(-50%);
 }
+.discount-popup:hover a {
+  color: var(--n0);
+}
 @media (max-width: 575px) {
   .discount-popup p {
     max-width: 200px;
@@ -2366,6 +2369,11 @@ iframe {
 }
 .header-section .main-navbar .custom-nav .menu-item .sub-menu .menu-link a:hover {
   color: var(--p1);
+}
+@media (max-width: 991px) {
+  .header-section .main-navbar .custom-nav .menu-item .sub-menu .menu-link a {
+    color: var(--n900);
+  }
 }
 .header-section .main-navbar .custom-nav .menu-item,
 .header-section .main-navbar .custom-nav .menu-link {

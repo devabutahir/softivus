@@ -70,6 +70,15 @@ $(document).ready(() => {
     // gsap.ticker.lagSmoothing(0);
     // ScrollTrigger.update();
     
+
+  //Offer Popup
+  const closeButton = document.querySelector(".close-btnoffer");
+  const popup = document.querySelector(".discount-popup");
+  if (closeButton && popup) {
+      closeButton.addEventListener("click", function () {
+          popup.remove(); // Removes the popup from the DOM
+      });
+  }
   
   // Text Circle 
   const text = document.querySelector(".texta");
@@ -616,14 +625,23 @@ $(document).ready(() => {
     //--== Current Year ==--//
 
     //-- Use Gsap Animation --// 
-    // Visible From Right Animation
-    if(document.querySelector('.visible-from-right')){
-      let visibleFromRight = document.querySelectorAll(".visible-from-right")
-      visibleFromRight.forEach((visibleFromRight) => {
-        let split_item = new SplitText(visibleFromRight, { type: "chars, words" })
-        gsap.from(split_item.chars, { duration: 1, x: 95, autoAlpha: 0, stagger: 0.15 });
-      })
-    }
+
+    // Create trigger the animation
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          let visibleFromRight = entry.target;
+          let split_item = new SplitText(visibleFromRight, { type: "chars, words" });      
+          gsap.from(split_item.chars, { duration: 1, x: 95, autoAlpha: 0, stagger: 0.15 });      
+          observer.unobserve(visibleFromRight);
+        }
+      });
+    }, {
+      threshold: 0.5 
+    });
+    document.querySelectorAll('.visible-from-right').forEach((element) => {
+      observer.observe(element);
+    });
 
     // Visible From Right Slowly Animation
     let visibleSlowlyRight = document.querySelectorAll(".visible-slowly-right");
@@ -637,11 +655,11 @@ $(document).ready(() => {
         const tl2 = gsap.timeline({
           scrollTrigger: {
             trigger: char_come,
-            start: "top 90%",
+            start: "top 90%", 
             end: "bottom 60%",
-            scrub: false,
-            markers: false,
-            toggleActions: "play none none none",
+            scrub: false, 
+            markers: false, 
+            toggleActions: "play none none none", 
           },
         });
         tl2.from(split_char.chars, {
@@ -651,67 +669,82 @@ $(document).ready(() => {
           stagger: 0.03,
         });
       });
+
+      // Force a ScrollTrigger refresh after the page loads or after resizing
+      window.addEventListener("load", () => {
+        ScrollTrigger.refresh();
+      });
+      window.addEventListener("resize", () => {
+        ScrollTrigger.refresh();
+      });
     }
 
     // Visible From Bottom Animation
     let visibleFromBottom = gsap.utils.toArray(".visible-from-bottom");
     visibleFromBottom.forEach(splitArea => {
-      const trigger = gsap.timeline({
-        scrollTrigger: {
-          trigger: splitArea,
-          start: 'top 90%',
-          end: 'bottom 90%',
-          scrub: false,
-          markers: false,
-        }
-      });
       const contentSplitted = new SplitText(splitArea, { type: "words, lines" });
       gsap.set(splitArea, { perspective: 400 });
-      contentSplitted.split({ type: "lines" })
-      trigger.from(contentSplitted.lines, { duration: 1, delay: 0.3, opacity: 0, rotationX: -75, force3D: true, transformOrigin: "top center -50", stagger: 0.1 });
+      contentSplitted.split({ type: "lines" });
+      gsap.fromTo(
+        contentSplitted.lines,
+        { opacity: 0, rotationX: -75, transformOrigin: "top center -50" },
+        {
+          opacity: 1,
+          rotationX: 0,
+          duration: 1,
+          stagger: 0.1,
+          force3D: true,
+          scrollTrigger: {
+            trigger: splitArea,
+            start: "top 90%",
+            end: "bottom 10%",
+            toggleActions: "play none none reverse",
+            markers: false,
+          }
+        }
+      );
     });
 
-    // Visible Slowly From Bottom Animation 
+    // Visible Slowly From Bottom Animation
     const visibleSlowlyBottom = document.querySelectorAll(".visible-slowly-bottom");
     function visibleSlowly() {
       visibleSlowlyBottom.forEach(splitArea => {
         if (splitArea.anim) {
+          // Kill any existing animation and revert the splitText
           splitArea.anim.progress(1).kill();
           splitArea.split.revert();
         }
+
+        // Split the text into chars, words, and lines
         splitArea.split = new SplitText(splitArea, {
           type: "lines,words,chars",
           linesClass: "split-line"
         });
+
+        // Create a new animation with ScrollTrigger
         splitArea.anim = gsap.from(splitArea.split.chars, {
           scrollTrigger: {
             trigger: splitArea,
-            toggleActions: "restart pause resume reverse",
-            start: 'top 90%',
+            toggleActions: "restart pause resume reverse", // Adjust behavior as needed
+            start: 'top 90%', // When the top of the element reaches 90% of the viewport
           },
           duration: 0.8,
-          ease: "circ.out",
+          ease: "circ.out", // Ease type for the animation
           y: 70,
           stagger: 0.02
         });
       });
     }
     ScrollTrigger.addEventListener("refresh", visibleSlowly);
+    window.addEventListener("load", () => {
+      ScrollTrigger.refresh(); 
+      visibleSlowly(); 
+    });
+    window.addEventListener("resize", () => {
+      ScrollTrigger.refresh(); 
+      visibleSlowly(); 
+    });
     visibleSlowly();
 
+
 });
-
-
-// const observer = new IntersectionObserver((entries) => {
-//   entries.forEach((entry) => {
-//     if (entry.isIntersecting) {
-//       entry.target.classList.add('visible');
-//     } else {
-//       entry.target.classList.remove('visible');
-//     }
-//   });
-// });
-
-// // Select the element to observe
-// const target = document.querySelector('.observe-me');
-// observer.observe(target);

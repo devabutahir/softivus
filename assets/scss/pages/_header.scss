@@ -7,6 +7,11 @@
         top: 50%;
         transform: translateY(-50%);
     }
+    &:hover{
+        a{
+            color: var(--n0);
+        }
+    }
    @include maxQuery(575){
     p{
         max-width: 200px;
@@ -222,6 +227,13 @@
                             color: var(--n0);
                             &:hover{
                                 color: var(--p1);
+                            }
+                        }
+                    }
+                    @include maxQuery(991){
+                        .menu-link{
+                            a{
+                                color: var(--n900);
                             }
                         }
                     }
