@@ -3877,6 +3877,7 @@ iframe {
   height: 100%;
   transition: all 0.4s;
   position: relative;
+  z-index: 1;
 }
 .single-service-item .content h5 {
   letter-spacing: 1px;
@@ -3918,6 +3919,7 @@ iframe {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: -1;
 }
 .single-service-item:hover {
   background: #050025;
@@ -4046,7 +4048,7 @@ iframe {
 }
 .team-tabbing-wrrap .tablinks .nav-links .tablink {
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--n900);
   text-transform: uppercase;
 }
@@ -4774,7 +4776,7 @@ iframe {
 .hero-section {
   background: #04001F;
   padding: 170px 0 120px;
-  z-index: 1;
+  z-index: 2;
 }
 .hero-section .hero-content .hero-sub {
   padding-left: 11px;
@@ -4789,6 +4791,7 @@ iframe {
 }
 .hero-section .hero-content h2 {
   font-family: var(--sub-font);
+  color: #00FF38;
 }
 .hero-section .hero-content .hero-btn-area {
   display: flex;
@@ -4994,6 +4997,23 @@ iframe {
 }
 .textcircle.style2 .circle-border-area .circle-arrow:hover {
   transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.mySwiper-flip {
+  height: 48px;
+  width: auto !important;
+  margin-left: initial;
+  margin-right: initial;
+}
+.mySwiper-flip .swiper-slide {
+  height: 48px;
+}
+.mySwiper-flip .swiper-slide h2 {
+  text-transform: uppercase;
+}
+.mySwiper-flip .swiper-slide img {
+  width: 100%;
+  height: 100%;
 }
 
 .text-container .text {

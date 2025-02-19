@@ -553,6 +553,23 @@ $(document).ready(() => {
     });
     //Shop Details
 
+    var swiper = new Swiper(".mySwiper-flip", {
+      effect: "cube",
+      loop: true,
+      grabCursor: true,
+      direction: "vertical",
+      autoplay: {
+        delay: 3000, 
+        disableOnInteraction: false, 
+      },
+      cubeEffect: {
+        shadow: true,
+        slideShadows: false,
+        shadowOffset: 0,
+        shadowScale: 0,
+      },
+    });
+
     //--== Custom Comment / Review Reply Box ==--//
     $(".reply").on("click", function () {
       $(this).toggleClass("reply-active");
