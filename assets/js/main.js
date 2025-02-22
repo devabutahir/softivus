@@ -746,5 +746,43 @@ $(document).ready(() => {
     });
     visibleSlowly();
 
+    // img Vivacity
+    let imgVivacity = document.querySelectorAll(".image-vivacity");
+    if (imgVivacity) {
+      VanillaTilt.init(imgVivacity, {
+        max: 3,
+        speed: 6800,
+        perspective: 450,
+      });
+    }
+
+    // image right to left 
+    gsap.registerPlugin(ScrollTrigger);
+    let revealContainers = document.querySelectorAll(".reveal-one");
+    revealContainers.forEach((container) => {
+    let image = container.querySelector(".reveal-image-one");
+    let rts = gsap.timeline({
+        scrollTrigger: {
+        trigger: container,
+        toggleActions: "restart none none reset",
+        start: "top 90%",
+        end: "top 0%",
+        }
+    });
+    rts.set(container, {
+        autoAlpha: 1
+    });
+    rts.from(container, 1.5, {
+        xPercent: 100,
+        ease: Power2.out
+    });
+    rts.from(image, 1.5, {
+        xPercent: -100,
+        scale: 1.3,
+        delay: -1.5,
+        ease: Power2.out
+    });
+});
+
 
 });
