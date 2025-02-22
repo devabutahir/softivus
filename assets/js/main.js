@@ -632,7 +632,7 @@ $(document).ready(() => {
         if (entry.isIntersecting) {
           let visibleFromRight = entry.target;
           let split_item = new SplitText(visibleFromRight, { type: "chars, words" });      
-          gsap.from(split_item.chars, { duration: 1, x: 95, autoAlpha: 0, stagger: 0.15 });      
+          gsap.from(split_item.chars, { duration: 0.5, x: 95, autoAlpha: 0, stagger: 0.15 });      
           observer.unobserve(visibleFromRight);
         }
       });
@@ -696,7 +696,7 @@ $(document).ready(() => {
           force3D: true,
           scrollTrigger: {
             trigger: splitArea,
-            start: "top 90%",
+            start: "top 98%",
             end: "bottom 10%",
             toggleActions: "play none none reverse",
             markers: false,
