@@ -2867,6 +2867,7 @@ iframe {
   padding: 32px;
   border-radius: 8px;
   transition: all 0.4s;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 1px 0px 0px;
 }
 .choose-items .icon {
   width: 72px;
@@ -2889,6 +2890,7 @@ iframe {
 }
 .choose-items:hover {
   transform: translateY(-7px);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 @media (max-width: 1399px) {
   .choose-items {
@@ -4781,6 +4783,31 @@ iframe {
   }
 }
 
+.customization-section .customization-option-price {
+  position: sticky;
+  top: 120px;
+}
+
+.elementor-area .elementor-icon {
+  min-width: 120px;
+  max-width: 120px;
+  height: 120px;
+  display: block;
+}
+.elementor-area .elementor-icon img {
+  height: 100%;
+  width: 100%;
+}
+@media (max-width: 575px) {
+  .elementor-area .elementor-icon {
+    margin: 0 auto;
+  }
+}
+
+.our-lelping-box a:hover {
+  color: var(--n0);
+}
+
 .hero-section {
   background: #04001F;
   padding: 170px 0 120px;
@@ -5040,6 +5067,40 @@ iframe {
   color: var(--n900);
 }
 
+.hire-breadcrumb {
+  background: url(../../assets/images/about/about-focus.png) no-repeat center center;
+  background-size: cover;
+  position: relative;
+  z-index: -1;
+  padding: 140px 0;
+}
+.hire-breadcrumb::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: rgba(55, 48, 62, 0.383);
+  z-index: -1;
+}
+.hire-breadcrumb .hire-content {
+  max-width: 650px;
+}
+.hire-breadcrumb .hire-content .elite-ratting-area img {
+  width: 30px;
+}
+@media (max-width: 1199px) {
+  .hire-breadcrumb {
+    padding: 80px 0 100px;
+  }
+}
+@media (max-width: 550px) {
+  .hire-breadcrumb {
+    padding: 80px 0 100px;
+  }
+}
+
 .containersdfsdf {
   position: relative;
   text-align: center;
@@ -5129,7 +5190,7 @@ iframe {
   border: 1px solid var(--n0);
   transition: all 0.5s;
 }
-.testimonial-btn-area button:hover {
+.testimonial-btn-area button.active, .testimonial-btn-area button:hover {
   background: var(--p1);
   border-color: var(--p1);
 }

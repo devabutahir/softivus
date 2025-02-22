@@ -5,6 +5,7 @@
     padding: 32px;
     border-radius: 8px;
     transition: all 0.4s;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 1px 0px 0px;
     .icon{
         width: 72px;
         height: 72px;
@@ -24,6 +25,7 @@
     }
     &:hover{
         transform: translateY(-7px);
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     }
     @include maxQuery(1399){
         padding: 24px;
@@ -2054,3 +2056,35 @@
     }
 }
 //Shopping Cart Section
+
+//customization-section
+.customization-section{
+    .customization-option-price{
+        position: sticky;
+        top: 120px;
+    }
+}
+.elementor-area{
+    .elementor-icon{
+        min-width: 120px;
+        max-width: 120px;
+        height: 120px;
+        display: block;
+        img{
+            height: 100%;
+            width: 100%;
+        }
+        @include maxQuery(575){
+            margin: 0 auto;
+        }
+    }
+}
+
+//our-lelping-box
+.our-lelping-box{
+    a{
+        &:hover{
+            color: var(--n0);
+        }
+    }
+}
