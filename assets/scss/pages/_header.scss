@@ -152,6 +152,16 @@
                                     &:hover{
                                         background: #F3F8FF;
                                     }
+                                    @include maxQuery(991){
+                                        .icon{
+                                            display: none !important;
+                                        }
+                                        padding: 2px !important;
+                                        letter-spacing: 1px;
+                                        &:hover{
+                                            color: var(--p1) !important;
+                                        }
+                                    }
                                 }
                             }
                         }

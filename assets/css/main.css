@@ -2310,6 +2310,18 @@ iframe {
 .header-section .main-navbar .custom-nav .custom-service-mega .sub-menu .menu-link ul li .menu-link-custom:hover {
   background: #F3F8FF;
 }
+@media (max-width: 991px) {
+  .header-section .main-navbar .custom-nav .custom-service-mega .sub-menu .menu-link ul li .menu-link-custom {
+    padding: 2px !important;
+    letter-spacing: 1px;
+  }
+  .header-section .main-navbar .custom-nav .custom-service-mega .sub-menu .menu-link ul li .menu-link-custom .icon {
+    display: none !important;
+  }
+  .header-section .main-navbar .custom-nav .custom-service-mega .sub-menu .menu-link ul li .menu-link-custom:hover {
+    color: var(--p1) !important;
+  }
+}
 @media (min-width: 991px) {
   .header-section .main-navbar .custom-nav .custom-service-mega .sub-menu {
     display: grid !important;

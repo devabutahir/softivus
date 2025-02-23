@@ -276,7 +276,7 @@ $(document).ready(() => {
     //--== Magnigiq Popup Initial ==--//
     $('.navbar-toggle-btn, .cus-header-overlay').on('click', function () {
       $('.navbar-toggle-item, .cus-header-overlay2').toggleClass('active'); 
-      $('body').toggleClass('overflow-visible');
+      $('body').toggleClass('overflow-hidden');
       $(this).toggleClass('open');
     });    
     $('.menu-item, .active-button').on('click', function () {
