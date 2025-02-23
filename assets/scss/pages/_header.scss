@@ -6,16 +6,27 @@
         right: 20px;
         top: 50%;
         transform: translateY(-50%);
+        svg{
+            path{
+                stroke: #fff;
+            }
+        }
     }
     &:hover{
         a{
             color: var(--n0);
         }
     }
-   @include maxQuery(575){
-    p{
-        max-width: 200px;
-    }
+   @include maxQuery(767){
+    justify-content: flex-start;
+        a{
+            max-width: 200px;
+            font-size: 12px !important;
+            margin-right: auto;
+            i{
+                display: none;
+            }
+        }
    }
 }
 
@@ -55,7 +66,7 @@
                 left: -320px;
                 width: 320px;
                 height: 100vh;
-                overflow-y: scroll;
+                overflow-y: auto !important;
                 padding: 10px 24px 40px;
                 transition: all 0.5s;
                 .mobile-logo{
@@ -244,13 +255,21 @@
                 color: var(--n0);
                 .active-button, a {
                     transition: all 0.5s;
-                    font-size: 18px; 
+                    font-size: 16px; 
+                    text-transform: uppercase;
                     font-weight: 500;
                     &:hover, &.active{
                         color: var(--p1);
                         &::after{
                             color: var(--p1);
                         }
+                    }
+                }
+            }
+            @include maxQuery(1199) {
+                .menu-item {
+                    a {
+                        font-size: 14px;
                     }
                 }
             }
@@ -263,7 +282,7 @@
                     }
                     .active-button,
                     a{
-                        font-size: 20px;
+                        font-size: 18px;
                         color: var(--n0);
                     }
                 }
@@ -419,6 +438,11 @@
                 position: absolute;
                 right: -8px;
                 top: -8px;
+            }
+            svg{
+                path{
+                    stroke: #fff;
+                }
             }
             i{
                 color: var(--n0);

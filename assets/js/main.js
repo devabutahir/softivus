@@ -69,6 +69,18 @@ $(document).ready(() => {
     });
     gsap.ticker.lagSmoothing(0);
     ScrollTrigger.update();
+    //Map Scrolling
+    const googleMap = document.querySelector("iframe");
+    if (googleMap && typeof lenis !== "undefined") {
+      googleMap.addEventListener("mouseenter", () => {
+        lenis.stop();
+      });
+
+      googleMap.addEventListener("mouseleave", () => {
+        lenis.start();
+      });
+    }
+    
     
 
   //Offer Popup
@@ -263,12 +275,12 @@ $(document).ready(() => {
     });
     //--== Magnigiq Popup Initial ==--//
     $('.navbar-toggle-btn, .cus-header-overlay').on('click', function () {
-      $('.navbar-toggle-item, .cus-header-overlay2').toggleClass('active'); // Only adds/removes 'active' class
-      $('body').toggleClass('overflow-hidden');
+      $('.navbar-toggle-item, .cus-header-overlay2').toggleClass('active'); 
+      $('body').toggleClass('overflow-visible');
       $(this).toggleClass('open');
     });    
     $('.menu-item, .active-button').on('click', function () {
-      $(this).siblings("ul").slideToggle(300); // Keeps toggle functionality for menu items
+      $(this).siblings("ul").slideToggle(300); 
     });
     //--== Custom Navbar Header ==--//
   

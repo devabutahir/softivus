@@ -2166,12 +2166,23 @@ iframe {
   top: 50%;
   transform: translateY(-50%);
 }
+.discount-popup .close-btnoffer svg path {
+  stroke: #fff;
+}
 .discount-popup:hover a {
   color: var(--n0);
 }
-@media (max-width: 575px) {
-  .discount-popup p {
+@media (max-width: 767px) {
+  .discount-popup {
+    justify-content: flex-start;
+  }
+  .discount-popup a {
     max-width: 200px;
+    font-size: 12px !important;
+    margin-right: auto;
+  }
+  .discount-popup a i {
+    display: none;
   }
 }
 
@@ -2213,7 +2224,7 @@ iframe {
     left: -320px;
     width: 320px;
     height: 100vh;
-    overflow-y: scroll;
+    overflow-y: auto !important;
     padding: 10px 24px 40px;
     transition: all 0.5s;
   }
@@ -2383,7 +2394,8 @@ iframe {
 .header-section .main-navbar .custom-nav .menu-link .active-button,
 .header-section .main-navbar .custom-nav .menu-link a {
   transition: all 0.5s;
-  font-size: 18px;
+  font-size: 16px;
+  text-transform: uppercase;
   font-weight: 500;
 }
 .header-section .main-navbar .custom-nav .menu-item .active-button:hover, .header-section .main-navbar .custom-nav .menu-item .active-button.active, .header-section .main-navbar .custom-nav .menu-item a:hover, .header-section .main-navbar .custom-nav .menu-item a.active,
@@ -2400,6 +2412,11 @@ iframe {
 .header-section .main-navbar .custom-nav .menu-link a.active::after {
   color: var(--p1);
 }
+@media (max-width: 1199px) {
+  .header-section .main-navbar .custom-nav .menu-item a {
+    font-size: 14px;
+  }
+}
 @media (max-width: 991px) {
   .header-section .main-navbar .custom-nav {
     width: 100%;
@@ -2410,7 +2427,7 @@ iframe {
   }
   .header-section .main-navbar .custom-nav .menu-item .active-button,
   .header-section .main-navbar .custom-nav .menu-item a {
-    font-size: 20px;
+    font-size: 18px;
     color: var(--n0);
   }
   .header-section .main-navbar .custom-nav .sub-menu {
@@ -2556,6 +2573,9 @@ iframe {
   position: absolute;
   right: -8px;
   top: -8px;
+}
+.header-section .support-area .search-icon svg path {
+  stroke: #fff;
 }
 .header-section .support-area .search-icon i {
   color: var(--n0);
@@ -4429,6 +4449,9 @@ iframe {
 }
 .contact-form .nice-select ::placeholder, .contact-form input ::placeholder, .contact-form textarea ::placeholder {
   color: #3E3B53;
+}
+.contact-form .nice-select .list {
+  background: var(--n0);
 }
 
 .careers-header-wrapper {
