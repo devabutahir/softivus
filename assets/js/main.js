@@ -62,13 +62,13 @@ $(document).ready(() => {
     //--== Preloader ==--//
 
     // lenis Scroll Init
-    // gsap.registerPlugin(ScrollSmoother); 
-    // const lenis = new Lenis();
-    // gsap.ticker.add(function (time) {
-    //   lenis.raf(time * 400);
-    // });
-    // gsap.ticker.lagSmoothing(0);
-    // ScrollTrigger.update();
+    gsap.registerPlugin(ScrollSmoother); 
+    const lenis = new Lenis();
+    gsap.ticker.add(function (time) {
+      lenis.raf(time * 400);
+    });
+    gsap.ticker.lagSmoothing(0);
+    ScrollTrigger.update();
     
 
   //Offer Popup
