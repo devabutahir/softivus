@@ -343,12 +343,12 @@ li {
   .fs-two,
   h2,
   h2 > a {
-    font-size: 26px;
+    font-size: 20px !important;
   }
   .fs-three,
   h3,
   h3 > a {
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 .pagination-more-item {
@@ -2912,12 +2912,24 @@ iframe {
   top: -25px;
   animation: updown 2s linear infinite;
 }
+@media (max-width: 575px) {
+  .faq-leftbox .thumb {
+    max-width: 110px;
+  }
+  .faq-leftbox .thumb img {
+    width: 100%;
+  }
+  .faq-leftbox .thumb .faq-element {
+    display: none;
+  }
+}
 
 .faq {
   background: var(--n0);
   border-radius: 32px;
 }
 .faq .header-area {
+  padding: 19px 24px 18px;
   cursor: pointer;
 }
 .faq .header-area button {
@@ -2954,7 +2966,7 @@ iframe {
   display: none;
 }
 .faq .content-area .content-body {
-  padding-top: 16px;
+  padding: 0 24px 18px;
 }
 .faq .content-area .content-body p {
   font-size: 16px;
@@ -2974,7 +2986,6 @@ iframe {
   border-radius: 16px;
   background: var(--n0);
   box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.06), 0px 1px 3px 0px rgba(16, 24, 40, 0.1);
-  padding: 20px 20px;
 }
 .faq .accordion-single.active {
   background: #ECECFF;
@@ -2983,8 +2994,20 @@ iframe {
   color: var(--900);
 }
 @media (max-width: 1199px) {
+  .faq .header-area {
+    padding: 16px 19px 16px;
+  }
   .faq .header-area button {
     font-size: 18px;
+  }
+  .faq .content-area {
+    display: none;
+  }
+  .faq .content-area .content-body {
+    padding: 0 19px 16px;
+  }
+  .faq .content-area .content-body p {
+    font-size: 15px;
   }
 }
 
@@ -3405,6 +3428,10 @@ iframe {
     bottom: 0;
     left: 0px;
     transform: rotate(0deg);
+  }
+  .template-items .content .cate-purchase .delprice {
+    font-size: 14px;
+    margin-top: 0;
   }
 }
 @media (max-width: 1366px) {
@@ -4230,7 +4257,7 @@ iframe {
     max-width: 416px;
   }
   .about-banner-wrap .about-banner-contleft .titles {
-    font-size: 90px;
+    font-size: 40px !important;
   }
   .about-banner-wrap .about-banner-contleft .work-badge {
     text-wrap: nowrap;
@@ -4380,6 +4407,11 @@ iframe {
 }
 .contact-lect-content .nice-select ::placeholder {
   color: #3E3B53;
+}
+@media (max-width: 991px) {
+  .contact-lect-content .line {
+    height: 30px;
+  }
 }
 
 .contact-form .nice-select, .contact-form input, .contact-form textarea {
@@ -5295,6 +5327,11 @@ iframe {
 .working-service-item:hover .serial {
   background: var(--p1);
   color: var(--n0);
+}
+@media (max-width: 991px) {
+  .working-service-item .serial {
+    margin-bottom: 30px;
+  }
 }
 
 .progress_bar_item .item_bar {

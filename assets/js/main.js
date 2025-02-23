@@ -707,6 +707,7 @@ $(document).ready(() => {
 
     // Visible Slowly From Bottom Animation
     const visibleSlowlyBottom = document.querySelectorAll(".visible-slowly-bottom");
+
     function visibleSlowly() {
       visibleSlowlyBottom.forEach(splitArea => {
         if (splitArea.anim) {

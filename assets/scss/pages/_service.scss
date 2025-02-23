@@ -76,5 +76,10 @@
             color: var(--n0);
         }
     }
+    @include maxQuery(991){
+        .serial{
+           margin-bottom: 30px;
+        }
+    }
 }
 //services Working section
