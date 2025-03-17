@@ -65,7 +65,7 @@ $(document).ready(() => {
     gsap.registerPlugin(ScrollSmoother); 
     const lenis = new Lenis();
     gsap.ticker.add(function (time) {
-      lenis.raf(time * 400);
+      lenis.raf(time * 600);
     });
     gsap.ticker.lagSmoothing(0);
     ScrollTrigger.update();

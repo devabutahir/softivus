@@ -1262,10 +1262,11 @@ text-transform: uppercase;
 	.masked-image {
 		width: 650px;
 		height: 650px;
-		background-image: url('../../assets/images/about/mask-solid.png'); 
+		background-image: url("../../assets/images/about/mask-solid.png"); 
+		mask-image: url("../../assets/images/about/mask-img.png"); 
+		-webkit-mask-image: url("../../assets/images/about/mask-img.png");
 		background-position: cover;
 		background-size: 100%;
-		mask-image: url('../../assets/images/about/mask-img.png'); 
 		mask-size: cover;
 		mask-repeat: no-repeat;
 		video{
